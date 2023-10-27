@@ -4,10 +4,18 @@
  */
 package org.itson.Domain;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
  * @author aleja
  */
 public class pondToken {
+    List tokenList=new LinkedList<Token>();
+    
+    public Token pullToken(Token token){return token;}
+    
+    public void assignTokensToPond(Token ListTokens){};
     
 }

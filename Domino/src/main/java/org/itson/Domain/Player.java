@@ -4,6 +4,9 @@
  */
 package org.itson.Domain;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
  * @author aleja
@@ -11,7 +14,7 @@ package org.itson.Domain;
 public class Player {
     private String name;
     private String avatar;
-    
+    List tokenList = new LinkedList<playerToken>();
     
     
     

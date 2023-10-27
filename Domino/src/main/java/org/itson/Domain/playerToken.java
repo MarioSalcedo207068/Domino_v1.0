@@ -9,5 +9,5 @@ package org.itson.Domain;
  * @author aleja
  */
 public class playerToken {
-    
+public void assignTokensToPlayer(Token tokenList){};
 }
