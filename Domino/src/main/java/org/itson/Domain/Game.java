@@ -17,6 +17,7 @@ public class Game {
     private int numTokens;
     private State gameState;
     private List players = new LinkedList<Player>();
+    Player player;
     Board board;
     private List TokenList = new LinkedList<Token>();
     
@@ -77,6 +78,21 @@ public class Game {
     
     public List obtainTokenListFromPlayer(int id){return TokenList;}
     
-    public List addTokenToBoard(Token BoardTokenList){return BoardTokenList;}
+    public List addTokenToBoard(/*Token BoardTokenList*/ playerToken selectedToken){return null;}
+    
+    public Player obtainPlayerInfo(){return obtainPlayerInfo();}
+    
+    public pondToken returnTokensToPond(playerToken tokenList){
+        /*if (player.getPlayerState().equals("Inactive")) {
+            player.removeToken(tokenList);
+        }
+        return tokenList;*/
+        return null;
+    }
+    /**
+     * Verificar si el jugador está activo en la partida.
+     * @param player 
+     */
+    public void playerStateToInactive(Player player){};
     
 }

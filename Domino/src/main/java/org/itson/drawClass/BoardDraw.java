@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.itson.Domain;
+package org.itson.drawClass;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,11 +11,13 @@ import java.util.List;
  *
  * @author aleja
  */
-public class pondToken extends Token{
-    List tokenList=new LinkedList<Token>();
+public class BoardDraw extends GameElement{
+    //Atributos
+    private List TokenList=new LinkedList<TokenDraw>();
     
-    public Token pullToken(Token token){return token;}
-    
-    public void assignTokensToPond(Token ListTokens){};
-    
+    //Métodos
+    public void addTokens(TokenDraw td){};
+    public void deleteTokens(TokenDraw td){};
+    @Override
+    public void draw(){};
 }

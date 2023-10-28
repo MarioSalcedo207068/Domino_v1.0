@@ -4,12 +4,31 @@
  */
 package org.itson.View;
 
+import java.util.List;
+import org.itson.Domain.Player;
+import org.itson.Domain.Token;
+import org.itson.drawClass.BoardDraw;
+
 /**
  *
  * @author aleja
  */
 public class viewPartida {
+    
+    BoardDraw boardDraw;
+    
     public void showPlayerInfo(){};
     public void showGameInfo(){};
     public void placeToken(){};
+    public List updatePlayerTokens(){
+        return null;
+    };
+    public void notifyUnvalidToken(){};
+    public void pullToken(){};
+    public void notifyEmptyPond(){};
+    public void updateBoardTokens(List<Token> tokenList){};
+    public void passTurn(){};
+    public void exitGame(){};
+    public void notifyPlayerExit(Player player){};
+    public void updatePondTokens(List<Token> tokenList){};
 }

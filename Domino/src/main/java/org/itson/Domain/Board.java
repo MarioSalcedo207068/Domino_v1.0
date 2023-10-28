@@ -11,12 +11,23 @@ import java.util.List;
  *
  * @author aleja
  */
-public class Board {
+public class Board extends BoardToken{
     private List placedToken = new LinkedList<BoardToken>();
-    private List tokenList;
+//    private List tokenList;
     
     public List addTokenToBoard(Token tokenPlayer){
-        
-                this.tokenList.add(tokenPlayer);
-        return this.tokenList;}
+        this.placedToken.add(tokenPlayer);
+        return this.placedToken;
+    }
+    
+    /**
+     * Método para poner fichas, para validar antes de que se ponga en board
+     * @param playertoken ficha de jugador a validar
+     * @param bool estado de ficha true en caso válido
+     * @return 
+     */
+    public Boolean validateToken(playerToken playertoken, Boolean bool){
+        if (bool==true) {
+        }
+        return true;}
 }

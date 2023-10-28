@@ -2,18 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.itson.Model;
-
-import org.itson.Domain.Game;
-import org.itson.Domain.Player;
+package org.itson.Domain;
 
 /**
  *
  * @author aleja
  */
-public class model_Lobby {
-    Game game = new Game();
-    Player player = new Player();
+public class Score {
+    private int score;
+    private String playerName;
     
-    public void startGame(){};
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+    
 }

@@ -4,10 +4,17 @@
  */
 package org.itson.Presenter;
 
+import org.itson.Domain.Game;
+import org.itson.Model.modelLobby;
+
 /**
  *
  * @author aleja
  */
 public class presenterLobby {
+    modelLobby ModelLobby;
+    
+    public void createNewGame(Game game){};
+    public void connectGamePresenter(){};
     
 }
