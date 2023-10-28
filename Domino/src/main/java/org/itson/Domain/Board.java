@@ -4,10 +4,19 @@
  */
 package org.itson.Domain;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  *
  * @author aleja
  */
 public class Board {
+    private List placedToken = new LinkedList<BoardToken>();
+    private List tokenList;
     
+    public List addTokenToBoard(Token tokenPlayer){
+        
+                this.tokenList.add(tokenPlayer);
+        return this.tokenList;}
 }

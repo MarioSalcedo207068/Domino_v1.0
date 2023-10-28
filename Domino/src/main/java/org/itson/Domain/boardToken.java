@@ -8,6 +8,6 @@ package org.itson.Domain;
  *
  * @author aleja
  */
-public class boardToken {
+public class BoardToken extends Token{
     
 }
