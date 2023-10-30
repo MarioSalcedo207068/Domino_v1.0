@@ -18,4 +18,9 @@ public class pondToken extends Token{
     
     public void assignTokensToPond(Token ListTokens){};
     
+    public void addTokenToPond(Token token)
+    {
+        tokenList.add(token);
+    }
+    
 }

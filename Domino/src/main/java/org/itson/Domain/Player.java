@@ -16,7 +16,7 @@ public class Player {
     private int id;
     private String name;
     private String avatar;
-    private List tokenList = new LinkedList<playerToken>();
+    private List<playerToken> tokenList = new LinkedList();
     private State playerState;
     
     //Métodos 
@@ -35,7 +35,7 @@ public class Player {
     }
     
     public List addToken(Token tokenList){
-        this.tokenList.add(tokenList);
+        this.tokenList.add((playerToken) tokenList);
         return this.tokenList;
     }
 
@@ -69,6 +69,14 @@ public class Player {
 
     public void setPlayerState(State playerState) {
         this.playerState = playerState;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     
