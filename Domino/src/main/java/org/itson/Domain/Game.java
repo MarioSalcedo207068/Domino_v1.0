@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.itson.Domain;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import org.itson.State.State;
@@ -13,7 +8,8 @@ import org.itson.State.State;
  *
  * @author aleja
  */
-public class Game {
+public class Game 
+{
     private int numPlayers;
     private int numTokens;
     private State gameState;
@@ -64,6 +60,7 @@ public class Game {
      */
     public List<Score> calculatePlayerScore()
     {
+        
         int sumaValorFicha = 0;
         List<Score> puntuaciones = null;
         for(Player jugador:players)
@@ -81,10 +78,16 @@ public class Game {
         
         return puntuaciones;
     }
+    
     /**
      * 
      */
-    public void startGame(){};
+    public void startGame()
+    {
+        
+        
+        
+    };
     
     /**
      * Cómo revolver las fichas
@@ -102,6 +105,9 @@ public class Game {
         }
         return fichasExtraidas;
     }
+    
+    
+    
     /**
      * Asignar a jugador correspondiente
      * @param TokenList 

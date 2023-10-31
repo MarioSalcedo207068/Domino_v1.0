@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.itson.Model;
 
 import org.itson.Domain.Game;
@@ -17,7 +13,12 @@ public class modelLobby implements iModelLobby{
     Game game = new Game();
     Player player = new Player();
     
-    public void startGame(){};
+    public Game startGame()
+    {
+        
+        
+        return this.game;
+    };
 
     @Override
     public State obtainGameState() {
