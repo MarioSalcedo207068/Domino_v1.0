@@ -4,6 +4,7 @@
  */
 package org.itson.Model;
 
+import java.io.Console;
 import org.itson.Domain.Player;
 import org.itson.Interfaces.iModelMenu;
 /**
@@ -15,9 +16,11 @@ public class modelMenu implements iModelMenu{
     
     public void createGame(){};
 
+    //AQUÍ SE CAMBIÓ DE VOID A STRING (SE CAMBIÓ DESDE LA INTERFACE IMODELMENU EN CASO DE NECESITAR CAMBIAR
+    //ESTABA COMO VOID.
     @Override
-    public void obtainPlayerName() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String obtainPlayerName() {
+        return player.getName();
     }
 
     @Override

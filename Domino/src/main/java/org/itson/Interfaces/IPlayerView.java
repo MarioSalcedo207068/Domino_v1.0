@@ -8,7 +8,11 @@ package org.itson.Interfaces;
  *
  * @author aleja
  */
-public interface iModelMenu {
-    public String obtainPlayerName();
-    public void obtainPlayerAvatar();
+/**
+ * Interfaz de prueba para Vista de la información del jugador(Player) para Menu
+ */
+public interface IPlayerView {
+    
+    void DisplayPlayerName(String playerName);
+
 }
