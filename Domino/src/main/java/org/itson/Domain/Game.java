@@ -79,11 +79,12 @@ public class Game
     
     /**
      * 
+     * @return 
      */
-    public void startGame()
+    public Game startGame()
     {
         
-        
+        return this;
         
     };
     
@@ -163,10 +164,8 @@ public class Game
     
     public void returnTokensToPond(List<Token> tokenList){
 
-        for(Token pieza:tokenList)
-        {
-            board.getPond().addTokenToPond(pieza);
-        }
+
+        board.getPond().addTokensToPond(tokenList);
         
     }
 //    
