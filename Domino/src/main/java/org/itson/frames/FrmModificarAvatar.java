@@ -4,12 +4,17 @@
  */
 package org.itson.frames;
 
+import org.itson.Interfaces.IMenu;
+
 /**
  *
  * @author MoonA
  */
 public class FrmModificarAvatar extends javax.swing.JFrame {
 
+    
+    IMenu presenterMenu;
+    
     /**
      * Creates new form FrmModificarAvatar
      */
@@ -33,6 +38,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Customize Avatar");
@@ -66,6 +72,11 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
         jLabel1.setText("Nickname:");
 
         txtNombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
 
         btnSave.setBackground(new java.awt.Color(255, 153, 153));
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -76,6 +87,8 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
+
+        jButton1.setText("<-Volver");
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
@@ -98,9 +111,13 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnSiguiente))))
                     .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                        .addGap(171, 171, 171)
+                        .addGap(177, 177, 177)
                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(122, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(16, 16, 16))
         );
         pnlPrincipalLayout.setVerticalGroup(
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +136,9 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,12 +160,19 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        
+        
+//        presenterMenu.addPlayer(txtNombre.getText(),idAvatar);
+        
         FrmInicio frm = new FrmInicio();
         this.dispose();
         frm.setVisible(true);
              
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +214,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
     private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel pnlPrincipal;

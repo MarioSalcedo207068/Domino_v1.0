@@ -17,21 +17,19 @@ public class Game
     private List<Player> players;
     
     private Board board;
-    private List<Token> TokenList ;
-    
+
     
     //Métodos
     
     public Game() 
     {
-        TokenList = new LinkedList<>();
         players = new LinkedList<>();
+        
     }
 
     public Game(int numPlayers, int numTokens) {
         this.numPlayers = numPlayers;
         this.numTokens = numTokens;
-        TokenList = new LinkedList<>();
     }
     
     

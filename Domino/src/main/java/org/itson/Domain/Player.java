@@ -11,13 +11,24 @@ public class Player {
     private int id;
     private String name;
     private String avatar;
-    private List<playerToken> tokenList = new LinkedList();
+    private List<playerToken> tokenList;
     private boolean playerState;
     
     //Métodos 
     //public Token removeToken(Token tokenList){return this.tokenList.remove(1);}
     
-    public Player(){}
+    public Player(String name, String avatar)
+    {
+        this.name = name;
+        this.avatar = avatar;
+        this.playerState = false;
+        this.id = obtenerNumeroRandom(0,100);
+        tokenList = new LinkedList();
+    }
+    public Player()
+    {
+        
+    }
     
     public List removeToken(Token tokenList){
         this.tokenList.remove(tokenList);
@@ -74,7 +85,12 @@ public class Player {
         this.id = id;
     }
     
-    
+     public int obtenerNumeroRandom(int min, int max)
+    {
+        int n =(int)(Math.random() * (max - min)) + min;
+        
+        return n;
+    }       
     
     
     

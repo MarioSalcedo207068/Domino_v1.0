@@ -24,7 +24,7 @@ public class modelMenu implements iModelMenu{
     }
 
     @Override
-    public void obtainPlayerAvatar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String obtainPlayerAvatar() {
+        return player.getAvatar();
     }
 }

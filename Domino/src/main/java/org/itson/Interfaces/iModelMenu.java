@@ -7,5 +7,6 @@ package org.itson.Interfaces;
  */
 public interface iModelMenu {
     public String obtainPlayerName();
-    public void obtainPlayerAvatar();
+    public String obtainPlayerAvatar();
+
 }
