@@ -1,8 +1,9 @@
 package org.itson.Domain;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
-import org.itson.State.State;
 
 /**
  *
@@ -12,9 +13,9 @@ public class Game
 {
     private int numPlayers;
     private int numTokens;
-    private State gameState;
+    private boolean gameState;
     private List<Player> players;
-    private Player player;
+    
     private Board board;
     private List<Token> TokenList ;
     
@@ -58,21 +59,20 @@ public class Game
      * Revisar calculatePlayerScore
      * @return 
      */
-    public List<Score> calculatePlayerScore()
+    public List<Dictionary> calculatePlayerScore()
     {
         
         int sumaValorFicha = 0;
-        List<Score> puntuaciones = null;
+        List<Dictionary> puntuaciones = null;
         for(Player jugador:players)
         {
-            Score puntuacion = null;
+            Dictionary<String, Integer> puntuacion= new Hashtable<>();
             List<playerToken> listaFichas = jugador.getAllTokenList();
             for(playerToken ficha:listaFichas)
             {
                 sumaValorFicha = ficha.getLowerSide() + ficha.getUpperSide();
             }
-            puntuacion.setScore(sumaValorFicha);
-            puntuacion.setPlayerName(jugador.getName());
+            puntuacion.put(jugador.getName(), sumaValorFicha);
             puntuaciones.add(puntuacion);
         }
         
@@ -89,22 +89,22 @@ public class Game
         
     };
     
-    /**
-     * Cómo revolver las fichas
-     * @param numTokens
-     * @return 
-     */
-    public List obtainTokens(int numTokens)
-    {
-        List fichasExtraidas = null;
-        for(int i = 0;numTokens>i;i++)
-        {
-            int numRandom = obtenerNumeroRandom(0,TokenList.size());
-            fichasExtraidas.add(TokenList.get(numRandom));
-            TokenList.remove(numRandom);
-        }
-        return fichasExtraidas;
-    }
+//    /**
+//     * Cómo revolver las fichas
+//     * @param numTokens
+//     * @return 
+//     */
+//    public List obtainTokens(int numTokens)
+//    {
+//        List fichasExtraidas = null;
+//        for(int i = 0;numTokens>i;i++)
+//        {
+//            int numRandom = obtenerNumeroRandom(0,TokenList.size());
+//            fichasExtraidas.add(TokenList.get(numRandom));
+//            TokenList.remove(numRandom);
+//        }
+//        return fichasExtraidas;
+//    }
     
     
     
@@ -127,11 +127,7 @@ public class Game
         
     };
     
-    public void assignRemainingTokensToPond()
-    {
-        board.getPond().assignTokensToPond((Token) TokenList);
-    };
-    
+
     public List obtainTokenListFromPlayer(int id)
     {
         int posicionJugador = -1;
@@ -175,19 +171,17 @@ public class Game
         }
         
     }
+//    
+//    /**
+//     * Verificar si el jugador está activo en la partida.
+//     * @param player 
+//     */
+//    public void playerStateToInactive(Player player)
+//    {
+//        
+//    };
     
-    /**
-     * Verificar si el jugador está activo en la partida.
-     * @param player 
-     */
-    public void playerStateToInactive(Player player){};
     
-    
-    public int obtenerNumeroRandom(int min, int max)
-    {
-        int n =(int)(Math.random() * (max - min)) + min;
-        
-        return n;
-    }
+
     
 }

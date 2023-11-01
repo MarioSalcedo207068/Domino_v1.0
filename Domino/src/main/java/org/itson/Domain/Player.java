@@ -1,9 +1,7 @@
-
 package org.itson.Domain;
 
 import java.util.LinkedList;
 import java.util.List;
-import org.itson.State.State;
 
 /**
  *
@@ -14,7 +12,7 @@ public class Player {
     private String name;
     private String avatar;
     private List<playerToken> tokenList = new LinkedList();
-    private State playerState;
+    private boolean playerState;
     
     //Métodos 
     //public Token removeToken(Token tokenList){return this.tokenList.remove(1);}
@@ -60,11 +58,11 @@ public class Player {
         this.tokenList = tokenList;
     }
 
-    public State getPlayerState() {
+    public boolean getPlayerState() {
         return playerState;
     }
 
-    public void setPlayerState(State playerState) {
+    public void setPlayerState(boolean playerState) {
         this.playerState = playerState;
     }
 

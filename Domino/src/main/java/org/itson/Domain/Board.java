@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Board extends BoardToken{
     private List<BoardToken> placedToken = new LinkedList();
-    private pondToken pond;
+    private Pond pond;
 //    private List tokenList;
     
     public List addTokenToBoard(Token tokenPlayer)
@@ -43,11 +43,11 @@ public class Board extends BoardToken{
 //        }
         return true;}
 
-    public pondToken getPond() {
+    public Pond getPond() {
         return pond;
     }
 
-    public void setPond(pondToken pond) {
+    public void setPond(Pond pond) {
         this.pond = pond;
     }
 

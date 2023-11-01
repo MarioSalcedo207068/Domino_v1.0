@@ -4,9 +4,9 @@
  */
 package org.itson.Presenter;
 
+import java.util.Dictionary;
 import java.util.List;
 import org.itson.Domain.Game;
-import org.itson.Domain.Score;
 import org.itson.Domain.Token;
 import org.itson.Interfaces.IPartida;
 
@@ -16,7 +16,7 @@ import org.itson.Interfaces.IPartida;
  */
 public class presenterPartida implements IPartida{
     
-    public void endMatch(List<Score> scoreList){
+    public void endMatch(List<Dictionary> scoreList){
     
     };
     

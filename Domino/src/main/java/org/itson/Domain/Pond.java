@@ -11,10 +11,20 @@ import java.util.List;
  *
  * @author aleja
  */
-public class pondToken extends Token{
-    List tokenList=new LinkedList<Token>();
+public class Pond 
+{
+    List<Token> tokenList=new LinkedList();
     
-    public Token pullToken(Token token){return token;}
+    public Token pullToken()
+    {
+        int numRandom = obtenerNumeroRandom(0,tokenList.size());
+        Token fichaDevuelta = tokenList.get(numRandom);
+        tokenList.remove(numRandom);
+        return fichaDevuelta;
+        
+    }
+    
+    
     
     public void assignTokensToPond(Token ListTokens){};
     
@@ -23,4 +33,10 @@ public class pondToken extends Token{
         tokenList.add(token);
     }
     
+    public int obtenerNumeroRandom(int min, int max)
+    {
+        int n =(int)(Math.random() * (max - min)) + min;
+        
+        return n;
+    }    
 }

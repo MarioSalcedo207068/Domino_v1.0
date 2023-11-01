@@ -4,9 +4,9 @@
  */
 package org.itson.Interfaces;
 
+import java.util.Dictionary;
 import java.util.List;
 import org.itson.Domain.Game;
-import org.itson.Domain.Score;
 import org.itson.Domain.Token;
 
 /**
@@ -19,7 +19,7 @@ public interface IPartida {
     public void getTokenFromPond();
     public void playerLeftMatch();
     public void playerVotedEnd();
-    public void endMatch(List<Score> scoreList);
+    public void endMatch(List<Dictionary> scoreList);
     public void obtainTokenFromPond();
     public void updatePlayerTokenList(List<Token> tokenList);
     public void boardError();
