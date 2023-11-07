@@ -9,7 +9,7 @@ import org.itson.Domain.Player;
 import org.itson.Interfaces.iModelMenu;
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class modelMenu implements iModelMenu{
     Player player;

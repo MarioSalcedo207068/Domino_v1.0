@@ -4,14 +4,14 @@
  */
 package org.itson.Interfaces;
 
-import org.itson.State.State;
+
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public interface iModelLobby {
-    public State obtainGameState();
+    public boolean obtainGameState();
     public int obtainNumOfPlayers();
     public String obtainGamePlayerName();
     public String obtainGamePlayerAvatar();

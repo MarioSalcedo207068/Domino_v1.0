@@ -3,7 +3,7 @@ package org.itson.Domain;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class Token {
     private int upperSide;

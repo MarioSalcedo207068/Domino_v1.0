@@ -2,7 +2,7 @@ package org.itson.Interfaces;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public interface IMenu 
 {

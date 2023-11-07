@@ -6,7 +6,7 @@ package org.itson.drawClass;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class PanelScores {
     public void showPlayerName(){};

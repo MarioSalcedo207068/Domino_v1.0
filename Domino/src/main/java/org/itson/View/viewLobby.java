@@ -8,7 +8,7 @@ import org.itson.Domain.Game;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class viewLobby {
     public void showData(){};

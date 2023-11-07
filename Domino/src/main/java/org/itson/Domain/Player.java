@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class Player {
     private int id;

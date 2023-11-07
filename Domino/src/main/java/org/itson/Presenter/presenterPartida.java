@@ -12,7 +12,7 @@ import org.itson.Interfaces.IPartida;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class presenterPartida implements IPartida{
     

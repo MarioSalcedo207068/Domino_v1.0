@@ -6,7 +6,7 @@ package org.itson.drawClass;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public abstract class GameElement {
     public void draw(){};

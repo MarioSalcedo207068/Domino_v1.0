@@ -3,11 +3,11 @@ package org.itson.Model;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Interfaces.iModelLobby;
-import org.itson.State.State;
+
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class modelLobby implements iModelLobby{
     Game game = new Game();
@@ -21,8 +21,8 @@ public class modelLobby implements iModelLobby{
     };
 
     @Override
-    public State obtainGameState() {
-        return null;
+    public boolean obtainGameState() {
+        return false;
     }
 
     @Override

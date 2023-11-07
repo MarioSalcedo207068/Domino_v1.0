@@ -9,7 +9,7 @@ import org.itson.Model.modelMenu;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 
 /**

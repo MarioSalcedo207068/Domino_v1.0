@@ -8,11 +8,11 @@ import java.util.List;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Interfaces.iModelPartida;
-import org.itson.State.State;
+
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class modelPartida implements iModelPartida{
     private Game game;
@@ -41,7 +41,7 @@ public class modelPartida implements iModelPartida{
     }
 
     @Override
-    public State obtainGameState() {
+    public boolean obtainGameState() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

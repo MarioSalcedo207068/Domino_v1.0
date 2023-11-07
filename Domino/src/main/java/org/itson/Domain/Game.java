@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class Game 
 {

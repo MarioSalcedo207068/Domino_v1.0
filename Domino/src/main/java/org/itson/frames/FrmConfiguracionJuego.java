@@ -4,11 +4,15 @@
  */
 package org.itson.frames;
 
+import org.itson.Presenter.presenterLobby;
+
 /**
  *
- * @author MoonA
+ * @author Equipo 02
  */
 public class FrmConfiguracionJuego extends javax.swing.JFrame {
+    
+    presenterLobby presenterLobby = new presenterLobby();
 
     /**
      * Creates new form FrmConfiguracionJuego
@@ -32,6 +36,7 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
         btnEmpezar = new javax.swing.JButton();
         cantJugadores = new javax.swing.JSpinner();
         cantFichasJugador = new javax.swing.JSpinner();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Configurar partida");
@@ -70,6 +75,13 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
         cantFichasJugador.setToolTipText("");
         cantFichasJugador.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 255), 3, true));
 
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -86,8 +98,13 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
                 .addContainerGap(124, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(207, 207, 207))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(207, 207, 207))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnVolver)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +119,9 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
                     .addComponent(cantFichasJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGap(63, 63, 63)
+                .addComponent(btnVolver)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,10 +141,18 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
 
     private void btnEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpezarActionPerformed
         // TODO add your handling code here:
-        FrmInicio frm = new FrmInicio();
+
+        presenterLobby.setVisibleLobby();
         this.dispose();
-        frm.setVisible(true);
+        
     }//GEN-LAST:event_btnEmpezarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        
+        presenterLobby.setVisibleInicio();
+        this.dispose();
+        
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +192,7 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEmpezar;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JSpinner cantFichasJugador;
     private javax.swing.JSpinner cantJugadores;
     private javax.swing.JLabel jLabel1;

@@ -8,7 +8,7 @@ import org.itson.Interfaces.IPlayerView;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class viewMenu implements IPlayerView{
     public void createGame(){};

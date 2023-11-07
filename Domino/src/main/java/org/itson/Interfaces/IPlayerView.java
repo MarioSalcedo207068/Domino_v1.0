@@ -6,7 +6,7 @@ package org.itson.Interfaces;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 /**
  * Interfaz de prueba para Vista de la información del jugador(Player) para Menu

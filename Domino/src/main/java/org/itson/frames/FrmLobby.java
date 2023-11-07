@@ -4,12 +4,17 @@
  */
 package org.itson.frames;
 
+import org.itson.Presenter.presenterLobby;
+
 /**
  *
- * @author gerar
+ * @author Equipo 02
  */
 public class FrmLobby extends javax.swing.JFrame {
 
+    
+    
+    presenterLobby presenterLobby = new presenterLobby();
     /**
      * Creates new form FrmLobby
      */
@@ -151,10 +156,10 @@ public class FrmLobby extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-        // TODO add your handling code here:
-        FrmPartida frm= new FrmPartida();
+
+        
+        presenterLobby.setVisiblePartida();
         this.dispose();
-        frm.setVisible(true);
     }//GEN-LAST:event_btnStartActionPerformed
 
     /**

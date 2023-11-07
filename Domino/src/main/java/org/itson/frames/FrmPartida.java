@@ -6,13 +6,14 @@ package org.itson.frames;
 
 import java.awt.Dialog;
 import javax.swing.JOptionPane;
+import org.itson.Presenter.presenterLobby;
 
 /**
  *
- * @author gerar
+ * @author Equipo 02
  */
 public class FrmPartida extends javax.swing.JFrame {
-
+presenterLobby presenterLobby = new presenterLobby();
     /**
      * Creates new form frmPartida
      */
@@ -254,9 +255,9 @@ public class FrmPartida extends javax.swing.JFrame {
         // TODO add your handling code here:
         int respuesta=JOptionPane.showConfirmDialog(rootPane, "¿Seguro que desea abandonar la partida?");
         if (respuesta==0) {
-            FrmInicio frm = new FrmInicio();
+
+            presenterLobby.setVisibleInicio();
             this.dispose();
-            frm.setVisible(true);
         }else{
             
         }

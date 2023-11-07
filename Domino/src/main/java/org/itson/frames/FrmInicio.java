@@ -4,11 +4,16 @@
  */
 package org.itson.frames;
 
+import org.itson.Presenter.presenterLobby;
+
+
 /**
  *
- * @author gerar
+ * @author Equipo 02
  */
 public class FrmInicio extends javax.swing.JFrame {
+    
+    presenterLobby presenterLobby = new presenterLobby();
 
     /**
      * Creates new form FrmInicio
@@ -129,26 +134,25 @@ public class FrmInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingsActionPerformed
-        // TODO add your handling code here:+
-        FrmConfiguracionJuego frm = new FrmConfiguracionJuego();
-        this.dispose();
-        frm.setVisible(true);
-        
+
+        presenterLobby.setVisibleModificarAvatar();
+        this.dispose();        
         
     }//GEN-LAST:event_btnSettingsActionPerformed
 
     private void btnAvatarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvatarActionPerformed
         // TODO add your handling code here:
-        FrmModificarAvatar frm = new FrmModificarAvatar();
+
+        presenterLobby.setVisibleModificarAvatar();
         this.dispose();
-        frm.setVisible(true);
     }//GEN-LAST:event_btnAvatarActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        // TODO add your handling code here:
-        FrmLobby frm = new FrmLobby();
+        
+
+        presenterLobby.setVisibleLobby();
         this.dispose();
-        frm.setVisible(true);
+        
     }//GEN-LAST:event_btnPlayActionPerformed
 
     /**

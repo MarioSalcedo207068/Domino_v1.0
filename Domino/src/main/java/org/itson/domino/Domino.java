@@ -10,7 +10,7 @@ import org.itson.Domain.Player;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class Domino {
 

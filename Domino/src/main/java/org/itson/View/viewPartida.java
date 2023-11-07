@@ -11,7 +11,7 @@ import org.itson.drawClass.BoardDraw;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class viewPartida {
     

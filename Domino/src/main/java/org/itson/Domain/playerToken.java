@@ -6,7 +6,7 @@ package org.itson.Domain;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public class playerToken extends Token{
     

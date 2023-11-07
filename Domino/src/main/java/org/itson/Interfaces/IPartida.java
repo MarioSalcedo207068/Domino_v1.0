@@ -11,7 +11,7 @@ import org.itson.Domain.Token;
 
 /**
  *
- * @author aleja
+ * @author Equipo 02
  */
 public interface IPartida {
     public void placeTokenToBoard(Token token);

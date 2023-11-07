@@ -1,19 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package org.itson.frames;
 
 import org.itson.Interfaces.IMenu;
+import org.itson.Presenter.presenterLobby;
 
 /**
  *
- * @author MoonA
+ * @author Equipo 02
  */
 public class FrmModificarAvatar extends javax.swing.JFrame {
 
     
     IMenu presenterMenu;
+    presenterLobby presenterLobby = new presenterLobby();
     
     /**
      * Creates new form FrmModificarAvatar
@@ -38,7 +37,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Customize Avatar");
@@ -72,11 +71,6 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
         jLabel1.setText("Nickname:");
 
         txtNombre.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
-            }
-        });
 
         btnSave.setBackground(new java.awt.Color(255, 153, 153));
         btnSave.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -88,7 +82,12 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("<-Volver");
+        btnVolver.setText("<-Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
@@ -116,7 +115,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
                 .addContainerGap(122, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnVolver)
                 .addGap(16, 16, 16))
         );
         pnlPrincipalLayout.setVerticalGroup(
@@ -137,7 +136,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnVolver)
                 .addGap(21, 21, 21))
         );
 
@@ -161,18 +160,19 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         
-        
+        //AGREGAR LÓGICA PARA GUARDAR JUGADOR
 //        presenterMenu.addPlayer(txtNombre.getText(),idAvatar);
-        
-        FrmInicio frm = new FrmInicio();
-        this.dispose();
-        frm.setVisible(true);
-             
+
+
+          presenterLobby.setVisibleLobby();
+          this.dispose();
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        
+        presenterLobby.setVisibleInicio();
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,7 +214,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
     private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSiguiente;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel pnlPrincipal;
