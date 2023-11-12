@@ -1,7 +1,7 @@
 
 package org.itson.Domain;
 
-import java.util.ArrayList;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,9 +10,11 @@ import java.util.List;
  * @author Equipo 02
  */
 public class Board extends BoardToken{
-    private List<BoardToken> placedToken = new LinkedList();
+    private LinkedList<BoardToken> placedToken = new LinkedList();
     private Pond pond;
 //    private List tokenList;
+    
+    
     
     public List addTokenToBoard(Token tokenPlayer)
     {
@@ -33,12 +35,27 @@ public class Board extends BoardToken{
      * de ser false se comparará con la parte de la derecha.
      * @return 
      */
-    public Boolean validateToken(playerToken playerToken, Boolean bool){
-//        if (bool==true) 
-//        {
-//            if(placedToken.get(0))
-//        }
-        return true;}
+    public Boolean validateToken(playerToken playerToken, Boolean bool)
+    {
+        boolean resultado = false;
+        
+        //Si es True, la validación será direccionada al principio de la lista.
+        if(bool == true)
+        {
+            BoardToken tokenInicio = placedToken.getFirst(); 
+            if(tokenInicio.getLowerSide() == playerToken.getUpperSide() || tokenInicio.getLowerSide() == playerToken.getLowerSide())
+            {return true;}
+        }
+        
+        else
+            //Si es False, la validación será direccionada al fin de la lista.
+        {
+            BoardToken tokenFinal = placedToken.getLast();
+            if(tokenFinal.getUpperSide() == playerToken.getUpperSide() || tokenFinal.getLowerSide() == playerToken.getLowerSide())
+            {return true;}
+        } 
+        return resultado;
+    }
 
     public Pond getPond() {
         return pond;
