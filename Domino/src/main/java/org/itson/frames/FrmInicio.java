@@ -150,8 +150,8 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         
 
-        presenterLobby.setVisibleLobby();
-        this.dispose();
+        /*presenterLobby.setVisibleLobby();
+        this.dispose();*/
         
     }//GEN-LAST:event_btnPlayActionPerformed
 

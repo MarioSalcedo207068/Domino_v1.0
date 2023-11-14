@@ -2,12 +2,13 @@ package org.itson.Domain;
 
 import java.util.LinkedList;
 import java.util.List;
+import org.itson.Observer.IObserver;
 
 /**
  *
  * @author Equipo 02
  */
-public class Player {
+public class Player implements IObserver{
     private int id;
     private String name;
     private String avatar;
@@ -91,6 +92,11 @@ public class Player {
         
         return n;
     }       
+
+    @Override
+    public void update() {
+        
+    }
     
     
     

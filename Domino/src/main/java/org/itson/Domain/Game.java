@@ -4,12 +4,14 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
+import org.itson.Observer.IObservable;
+import org.itson.Observer.IObserver;
 
 /**
  *
  * @author Equipo 02
  */
-public class Game 
+public class Game implements IObservable
 {
     private int numPlayers;
     private int numTokens;
@@ -177,6 +179,23 @@ public class Game
 //    {
 //        
 //    };
+        
+    @Override
+    public void add(IObserver o) {
+        this.players.add((Player) o);
+    }
+    
+    @Override
+    public void remove(IObserver o) {
+        this.players.remove((Player) o);
+    }
+        
+    @Override
+    public void notificar() {
+        for (Player player : this.players) {
+            player.update();
+        }
+    }
     
     
 
