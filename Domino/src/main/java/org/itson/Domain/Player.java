@@ -8,7 +8,7 @@ import org.itson.Observer.IObserver;
  *
  * @author Equipo 02
  */
-public class Player implements IObserver{
+public class Player {
     private int id;
     private String name;
     private String avatar;
@@ -92,12 +92,4 @@ public class Player implements IObserver{
         
         return n;
     }       
-
-    @Override
-    public void update() {
-        
-    }
-    
-    
-    
 }

@@ -11,7 +11,7 @@ import org.itson.Observer.IObserver;
  *
  * @author Equipo 02
  */
-public class Game implements IObservable
+public class Game 
 {
     private int numPlayers;
     private int numTokens;
@@ -180,24 +180,5 @@ public class Game implements IObservable
 //        
 //    };
         
-    @Override
-    public void add(IObserver o) {
-        this.players.add((Player) o);
-    }
-    
-    @Override
-    public void remove(IObserver o) {
-        this.players.remove((Player) o);
-    }
-        
-    @Override
-    public void notificar() {
-        for (Player player : this.players) {
-            player.update();
-        }
-    }
-    
-    
-
     
 }
