@@ -1,19 +1,25 @@
 package org.itson.Domain;
 
+import java.lang.Thread.State;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.itson.Observer.IObserver;
+
+import org.itson.Interfaces.Observer;
+
 
 /**
  *
  * @author Equipo 02
  */
-public class Player {
+public class Player implements Observer {
     private int id;
     private String name;
     private String avatar;
     private List<playerToken> tokenList;
     private boolean playerState;
+    private State observerState;
     
     //Métodos 
     //public Token removeToken(Token tokenList){return this.tokenList.remove(1);}
@@ -31,11 +37,13 @@ public class Player {
         
     }
     
-    public List removeToken(Token tokenList){
-        this.tokenList.remove(tokenList);
+    public List removeToken(Token tokenToRemove){
+        
         for (int i = 0; i < this.tokenList.size(); i++) {
-            if(this.tokenList.get(i)==tokenList){this.tokenList.remove(i);
-            return this.tokenList; 
+            if(this.tokenList.get(i)==tokenToRemove)
+            {
+                this.tokenList.remove(i);
+                return this.tokenList; 
             }
         }
         return null;
@@ -66,7 +74,7 @@ public class Player {
         return tokenList;
     }
 
-    public void setTokenList(List tokenList) {
+    public void setTokenList(List<playerToken> tokenList) {
         this.tokenList = tokenList;
     }
 
@@ -92,4 +100,12 @@ public class Player {
         
         return n;
     }       
+
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+
 }
