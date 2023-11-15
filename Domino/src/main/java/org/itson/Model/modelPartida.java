@@ -4,9 +4,12 @@
  */
 package org.itson.Model;
 
+import java.lang.Thread.State;
 import java.util.List;
+import org.itson.Domain.BoardToken;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
+import org.itson.Domain.playerToken;
 import org.itson.Interfaces.iModelPartida;
 
 
@@ -17,47 +20,59 @@ import org.itson.Interfaces.iModelPartida;
 public class modelPartida implements iModelPartida{
     private Game game;
     
-    public void getGameState(){};
-    public void validateBoardToken(){};
+    
     public void obtainTokenFromPond(){};
     public void endCurrentTurn(){};
-    public void distributeTokens(int numTokens, int numPlayers){};
     public List getHighestMule(){return null;}
     public List returnTokensToPond(Player player){return null;}
 
     @Override
-    public String obtainPlayerName() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String obtainPlayerName(int id) 
+    {
+        Player p;
+        p = game.obtainPlayerInfo(id);
+        return p.getName();
     }
 
     @Override
-    public String obtainPlayerAvatar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String obtainPlayerAvatar(int id) 
+    {
+        Player p;
+        p = game.obtainPlayerInfo(id);
+        return p.getAvatar();
     }
 
     @Override
-    public int obtainPondNumberOfTokens() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int obtainPondNumberOfTokens() 
+    {
+        return game.getBoard().getPond().getNumOfTokens();
     }
 
     @Override
-    public boolean obtainGameState() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public State obtainGameState() 
+    {
+        return game.getState();
     }
 
     @Override
-    public List obtainBoardTokenList() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<BoardToken> obtainBoardTokenList() 
+    {
+        return game.getBoard().getTokenList();
     }
 
     @Override
-    public List obtainPlayerTokenList() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<playerToken> obtainPlayerTokenList(int id) {
+        Player p;
+        p = game.obtainPlayerInfo(id);
+        return p.getTokenList();
     }
 
     @Override
-    public int obtainPlayerNumTokenList() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int obtainPlayerNumberOfTokens(int id) 
+    {
+        Player p;
+        p = game.obtainPlayerInfo(id);
+        return p.getTokenList().size();
     }
     
 }

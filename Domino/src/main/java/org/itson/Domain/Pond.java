@@ -28,7 +28,12 @@ public class Pond
     public void addTokensToPond(List<Token> incomingTokens)
     {
         tokenList.addAll(incomingTokens);
-    };
+    }
+    
+    public int getNumOfTokens()
+    {
+        return tokenList.size();
+    }
     
     
     public int obtenerNumeroRandom(int min, int max)

@@ -28,7 +28,7 @@ public class CalcularScoreJugadores implements KnowledgeSource
         for(Player jugador:game.getPlayers())
           {
             Dictionary<String, Integer> puntuacion= new Hashtable<>();
-            List<playerToken> listaFichas = jugador.getAllTokenList();
+            List<playerToken> listaFichas = jugador.getTokenList();
             for(playerToken ficha:listaFichas)
             {
                 sumaValorFicha = ficha.getLowerSide() + ficha.getUpperSide();

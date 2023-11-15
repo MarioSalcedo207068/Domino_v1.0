@@ -38,4 +38,16 @@ public class Control
         
     }
     
+    public void llamadoExpertos(int numExperto)
+    {
+        KnowledgeSource ks;
+        switch(numExperto)
+        {
+            case 0:
+//            ks = listaExpertos.get(0);
+//            ks.update();
+            break;
+        }
+    }
+    
 }

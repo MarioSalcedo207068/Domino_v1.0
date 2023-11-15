@@ -4,18 +4,21 @@
  */
 package org.itson.Interfaces;
 
+import java.lang.Thread.State;
 import java.util.List;
+import org.itson.Domain.BoardToken;
+import org.itson.Domain.playerToken;
 
 /**
  *
  * @author Equipo 02
  */
 public interface iModelPartida {
-    public String obtainPlayerName();
-    public String obtainPlayerAvatar();
+    public String obtainPlayerName(int id);
+    public String obtainPlayerAvatar(int id);
     public int obtainPondNumberOfTokens();
-    public boolean obtainGameState();
-    public List obtainBoardTokenList();
-    public List obtainPlayerTokenList();
-    public int obtainPlayerNumTokenList();
+    public State obtainGameState();
+    public List<BoardToken> obtainBoardTokenList();
+    public List<playerToken> obtainPlayerTokenList(int id);
+    public int obtainPlayerNumberOfTokens(int id);
 }

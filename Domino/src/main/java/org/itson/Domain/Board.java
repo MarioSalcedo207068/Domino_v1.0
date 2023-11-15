@@ -14,7 +14,7 @@ import java.util.List;
 public class Board extends BoardToken{
     private LinkedList<BoardToken> placedToken = new LinkedList();
     private Pond pond;
-    private ValidarFichaTablero vf;
+
     
 //    private List tokenList;
     
@@ -29,7 +29,7 @@ public class Board extends BoardToken{
     }
     
     
-    public List<BoardToken> getPlacedToken() {
+    public List<BoardToken> getTokenList() {
         return placedToken;
     }
     

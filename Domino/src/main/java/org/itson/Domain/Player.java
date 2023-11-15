@@ -37,7 +37,7 @@ public class Player implements Observer {
         
     }
     
-    public List removeToken(Token tokenToRemove){
+    public List<playerToken> removeToken(Token tokenToRemove){
         
         for (int i = 0; i < this.tokenList.size(); i++) {
             if(this.tokenList.get(i)==tokenToRemove)
@@ -49,7 +49,7 @@ public class Player implements Observer {
         return null;
     }
     
-    public List addToken(Token tokenList){
+    public List<playerToken>  addToken(Token tokenList){
         this.tokenList.add((playerToken) tokenList);
         return this.tokenList;
     }
@@ -70,7 +70,7 @@ public class Player implements Observer {
         this.avatar = avatar;
     }
 
-    public List getAllTokenList() {
+    public List getTokenList() {
         return tokenList;
     }
 

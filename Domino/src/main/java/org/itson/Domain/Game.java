@@ -117,21 +117,22 @@ public class Game implements iGame
 //     * @param TokenList 
 //     * @param id 
 //     */
-//    public void assignTokensToPlayer(List TokenList, int id)
-//    {
-//        int posicionJugador = -1;
-//        for(int i = 0;players.size()>i;i++)
-//        {
-//            if(players.get(i).getId() == id)
-//            {
-//                posicionJugador = i;
-//            }
-//        }
-//        players.get(posicionJugador).setTokenList(TokenList);
-//    };
+    
+    public void assignTokensToPlayer(List TokenList, int id)
+    {
+        int posicionJugador = -1;
+        for(int i = 0;players.size()>i;i++)
+        {
+            if(players.get(i).getId() == id)
+            {
+                posicionJugador = i;
+            }
+        }
+        players.get(posicionJugador).setTokenList(TokenList);
+    };
     
 
-    public List obtainTokenListFromPlayer(int id)
+    public List<Token> obtainTokenListFromPlayer(int id)
     {
         int posicionJugador = -1;
         for(int i = 0;players.size()>i;i++)
@@ -142,14 +143,14 @@ public class Game implements iGame
             }
         }
 
-        return players.get(posicionJugador).getAllTokenList();
+        return players.get(posicionJugador).getTokenList();
     }
     
-    public List addTokenToBoard(/*Token BoardTokenList*/ playerToken selectedToken)
-    {
-        board.addTokenToBoard(selectedToken);
-        return board.getPlacedToken();
-    }
+//    public List addTokenToBoard(/*Token BoardTokenList*/ playerToken selectedToken)
+//    {
+//        board.addTokenToBoard(selectedToken);
+//        return board.getPlacedTokenList();
+//    }
     
     public Player obtainPlayerInfo(int id)
     {
@@ -215,6 +216,9 @@ public class Game implements iGame
     public void setState(State subjectState) {
         this.subjectState = subjectState;
     }
+    
+    
+    
 
     @Override
     public void register(org.itson.Interfaces.Observer ob) 
