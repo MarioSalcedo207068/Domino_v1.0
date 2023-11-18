@@ -5,6 +5,7 @@
 package org.itson.Interfaces;
 
 import org.itson.Domain.Game;
+import org.itson.Observer.IObserver;
 
 /**
  *
@@ -13,8 +14,8 @@ import org.itson.Domain.Game;
 public interface ChangeManager 
 {
     
-    public void register(Game game, Observer ob);
-    public void unregister(Game game, Observer ob);
+    public void register(Game game, IObserver ob);
+    public void unregister(Game game, IObserver ob);
     public void Notify();
     
 }

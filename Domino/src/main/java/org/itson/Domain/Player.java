@@ -4,16 +4,12 @@ import java.lang.Thread.State;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.itson.Observer.IObserver;
-
-import org.itson.Interfaces.Observer;
-
 
 /**
  *
  * @author Equipo 02
  */
-public class Player implements Observer {
+public class Player {
     private int id;
     private String name;
     private String avatar;
@@ -102,10 +98,6 @@ public class Player implements Observer {
     }       
 
 
-    @Override
-    public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
 
 }
