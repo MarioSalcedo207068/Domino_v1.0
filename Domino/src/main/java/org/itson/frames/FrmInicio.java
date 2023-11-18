@@ -4,6 +4,7 @@
  */
 package org.itson.frames;
 
+import org.itson.Interfaces.ILobby;
 import org.itson.Presenter.presenterLobby;
 
 
@@ -13,7 +14,7 @@ import org.itson.Presenter.presenterLobby;
  */
 public class FrmInicio extends javax.swing.JFrame {
     
-    presenterLobby presenterLobby = new presenterLobby();
+    ILobby ilobby = new presenterLobby();
 
     /**
      * Creates new form FrmInicio
@@ -135,7 +136,7 @@ public class FrmInicio extends javax.swing.JFrame {
 
     private void btnSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingsActionPerformed
 
-        presenterLobby.setVisibleModificarAvatar();
+        ilobby.setVisibleModificarAvatar();
         this.dispose();        
         
     }//GEN-LAST:event_btnSettingsActionPerformed
@@ -143,7 +144,7 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnAvatarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvatarActionPerformed
         // TODO add your handling code here:
 
-        presenterLobby.setVisibleModificarAvatar();
+        ilobby.setVisibleModificarAvatar();
         this.dispose();
     }//GEN-LAST:event_btnAvatarActionPerformed
 
