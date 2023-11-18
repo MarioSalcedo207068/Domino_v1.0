@@ -52,7 +52,8 @@ public class Control implements IObserver
     }
 
     @Override
-    public void update() {
+    public void update() 
+    {
         
     }
     

@@ -32,4 +32,11 @@ public class AsignarFichasAJugador implements KnowledgeSource
         game.getPlayers().get(posicionJugador).setTokenList(tokenList);        
     }    
     
+    //PENDIENTE
+
+    @Override
+    public void update(Object t, Object u) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
 }

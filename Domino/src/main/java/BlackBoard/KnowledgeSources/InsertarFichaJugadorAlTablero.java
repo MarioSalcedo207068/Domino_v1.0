@@ -12,7 +12,7 @@ import org.itson.Domain.playerToken;
  *
  * @author Equipo 02
  */
-public class InsertarFichaJugadorAlTablero implements KnowledgeSource {
+public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerToken,Player> {
     
     private Game game;
     public InsertarFichaJugadorAlTablero(Game game)
@@ -21,6 +21,7 @@ public class InsertarFichaJugadorAlTablero implements KnowledgeSource {
     }
     
     
+    @Override
     public void update(playerToken fichaJugador, Player jugador) 
     {
         for(Player players : game.getPlayers())
@@ -33,7 +34,8 @@ public class InsertarFichaJugadorAlTablero implements KnowledgeSource {
             }
         }
     }
-    
+
+
     
     
 }

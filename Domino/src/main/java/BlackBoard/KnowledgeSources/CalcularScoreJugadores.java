@@ -21,9 +21,16 @@ public class CalcularScoreJugadores implements KnowledgeSource
         this.game = game;
         }
         
+
         public void update()
         {
-        int sumaValorFicha = 0;
+
+        }
+
+    @Override
+    public void update(Object t, Object u) 
+    {
+         int sumaValorFicha = 0;
         List<Dictionary> puntuaciones = null;
         for(Player jugador:game.getPlayers())
           {
@@ -36,7 +43,7 @@ public class CalcularScoreJugadores implements KnowledgeSource
             puntuacion.put(jugador.getName(), sumaValorFicha);
             puntuaciones.add(puntuacion);
           }
-//      return puntuaciones;  
-        }
+        game.setScoreList(puntuaciones);         
+    }
         
 }

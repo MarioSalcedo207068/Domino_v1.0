@@ -6,13 +6,14 @@ package BlackBoard.KnowledgeSources;
 
 import org.itson.Domain.BoardToken;
 import org.itson.Domain.Game;
+import org.itson.Domain.Token;
 import org.itson.Domain.playerToken;
 
 /**
  *
  * @author Equipo 02
  */
-public class ValidarFichaTablero implements KnowledgeSource
+public class ValidarFichaTablero implements KnowledgeSource<Token,Boolean>    
 {
     private Game game;
     
@@ -21,31 +22,32 @@ public class ValidarFichaTablero implements KnowledgeSource
         this.game = game;
     }
     
-    public void update(playerToken playerToken, Boolean bool) 
+
+
+    @Override
+    public void update(Token tokenFromPlayer, Boolean position) 
     {
-//        boolean resultado = false;
-        
-        //Si es True, la validación será direccionada al principio de la lista.
-        if(bool == true)
+        if(position.equals(true))
         {
             BoardToken tokenInicio = game.getBoard().getFirstToken(); 
-            if(tokenInicio.getLowerSide() == playerToken.getUpperSide() || tokenInicio.getLowerSide() == playerToken.getLowerSide())
+            if(tokenInicio.getLowerSide().equals(tokenFromPlayer.getUpperSide()) || tokenInicio.getLowerSide() == tokenFromPlayer.getLowerSide())
             {
-//                return true;
+                //                return true;
             }
         }
-        
         else
-            //Si es False, la validación será direccionada al fin de la lista.
         {
             BoardToken tokenFinal = game.getBoard().getLastToken();
-            if(tokenFinal.getUpperSide() == playerToken.getUpperSide() || tokenFinal.getLowerSide() == playerToken.getLowerSide())
+            if(tokenFinal.getUpperSide().equals(tokenFromPlayer.getUpperSide()) || tokenFinal.getLowerSide().equals(tokenFromPlayer.getLowerSide()))
             {
-//                return true;
+//                return true;                
             }
-        } 
-//        return resultado;        
+        }
+//        return resultado;          
     }
+
+
+
 
 
 

@@ -21,6 +21,12 @@ public class DevolverFichasAlPozo implements KnowledgeSource
     {
         game.getBoard().getPond().addTokensToPond(tokenList); 
     }
+
+    //PENDIENTE
+    @Override
+    public void update(Object t, Object u) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     

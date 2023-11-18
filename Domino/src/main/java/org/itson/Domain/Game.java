@@ -22,6 +22,7 @@ public class Game implements IObservable
     private List<Player> players;
     private Board board;
     private State subjectState;
+    private List<Dictionary> scoreList;
 
     //Métodos
     
@@ -196,6 +197,14 @@ public class Game implements IObservable
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public List<Dictionary> getScoreList() {
+        return scoreList;
+    }
+
+    public void setScoreList(List<Dictionary> scoreList) {
+        this.scoreList = scoreList;
     }
     
     
