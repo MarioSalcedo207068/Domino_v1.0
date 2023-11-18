@@ -10,13 +10,11 @@ import java.util.List;
 import org.itson.Observer.IObservable;
 import org.itson.Observer.IObserver;
 
-import org.itson.Interfaces.iGame;
-
 /**
  *
  * @author Equipo 02
  */
-public class Game implements iGame
+public class Game implements IObservable
 {
     private int numPlayers;
     private int numTokens;
@@ -201,14 +199,6 @@ public class Game implements iGame
     }
     
     
-    
-    
-
-    @Override
-    public void notifyObserver() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public State getState() {
         return subjectState;
     }
@@ -217,18 +207,19 @@ public class Game implements iGame
         this.subjectState = subjectState;
     }
     
-    
-    
 
     @Override
-    public void register(org.itson.Interfaces.Observer ob) 
-    {
+    public void add(IObserver o) {
+     
+    }
+
+    @Override
+    public void remove(IObserver o) {
         
     }
 
     @Override
-    public void unregister(org.itson.Interfaces.Observer ob) 
-    {
+    public void notificar() {
         
     }
     

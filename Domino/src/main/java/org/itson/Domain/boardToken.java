@@ -10,4 +10,8 @@ import java.util.List;
  */
 public class BoardToken extends Token{
 
+    public BoardToken(int upperSide, int lowerSide) {
+        super(upperSide, lowerSide);
+    }
+
 }

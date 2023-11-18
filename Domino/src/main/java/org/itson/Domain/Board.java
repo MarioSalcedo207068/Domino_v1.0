@@ -17,6 +17,10 @@ public class Board extends BoardToken{
 
     
 //    private List tokenList;
+
+    public Board(int upperSide, int lowerSide) {
+        super(upperSide, lowerSide);
+    }
     
     
     

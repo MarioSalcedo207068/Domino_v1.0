@@ -10,12 +10,13 @@ import BlackBoard.KnowledgeSources.ValidarFichaTablero;
 import java.util.LinkedList;
 import java.util.List;
 import org.itson.Domain.Game;
+import org.itson.Observer.IObserver;
 
 /**
  *
  * @author Equipo 02
  */
-public class Control 
+public class Control implements IObserver
 {
     private Game blackboard;
     private List<KnowledgeSource> listaExpertos;
@@ -48,6 +49,11 @@ public class Control
 //            ks.update();
             break;
         }
+    }
+
+    @Override
+    public void update() {
+        
     }
     
 }
