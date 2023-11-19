@@ -24,15 +24,18 @@ public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerTok
     @Override
     public void update(playerToken fichaJugador, Player jugador) 
     {
-        for(Player players : game.getPlayers())
-        {
-            if(players.getId() == jugador.getId())
-            {
-                players.removeToken(fichaJugador);
-                game.getBoard().addTokenToBoard(fichaJugador);
-                break;
-            }
-        }
+//        for(Player players : game.getPlayers())
+//        {
+//            if(players.getId() == jugador.getId())
+//            {
+//                players.removeToken(fichaJugador);
+//                game.getBoard().addTokenToBoard(fichaJugador);
+//                break;
+//            }
+//        }
+        game.setObservableChanged();
+        game.notifyObservers();
+
     }
 
 

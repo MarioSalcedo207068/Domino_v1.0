@@ -7,6 +7,8 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import org.itson.Observer.IObservable;
 import org.itson.Observer.IObserver;
 
@@ -14,7 +16,7 @@ import org.itson.Observer.IObserver;
  *
  * @author Equipo 02
  */
-public class Game implements IObservable
+public class Game extends Observable 
 {
     private int numPlayers;
     private int numTokens;
@@ -29,7 +31,7 @@ public class Game implements IObservable
     public Game() 
     {
         players = new LinkedList<>();
-
+        
     }
 
     public Game(int numPlayers, int numTokens) {
@@ -208,6 +210,12 @@ public class Game implements IObservable
     }
     
     
+    public void setObservableChanged()
+    {
+        setChanged();
+    }
+    
+    
     public State getState() {
         return subjectState;
     }
@@ -215,22 +223,15 @@ public class Game implements IObservable
     public void setState(State subjectState) {
         this.subjectState = subjectState;
     }
+
+
+        
+ 
     
-
-    @Override
-    public void add(IObserver o) {
-     
-    }
-
-    @Override
-    public void remove(IObserver o) {
-        
-    }
-
-    @Override
-    public void notificar() {
-        
-    }
+    
+    
     
     
 }
+    
+    

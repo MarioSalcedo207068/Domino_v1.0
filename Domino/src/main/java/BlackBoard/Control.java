@@ -9,6 +9,8 @@ import BlackBoard.KnowledgeSources.KnowledgeSource;
 import BlackBoard.KnowledgeSources.ValidarFichaTablero;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import org.itson.Domain.Game;
 import org.itson.Observer.IObserver;
 
@@ -16,7 +18,7 @@ import org.itson.Observer.IObserver;
  *
  * @author Equipo 02
  */
-public class Control implements IObserver
+public class Control implements Observer
 {
     private Game blackboard;
     private List<KnowledgeSource> listaExpertos;
@@ -38,22 +40,48 @@ public class Control implements IObserver
         listaExpertos.add(e5);
         
     }
+
+    public Control() 
+    {
+        
+    }
     
-    public void llamadoExpertos(int numExperto)
+    public void llamadoExpertos(Object a, Object b,int numExperto)
     {
         KnowledgeSource ks;
         switch(numExperto)
         {
             case 0:
-//            ks = listaExpertos.get(0);
-//            ks.update();
+            ks = listaExpertos.get(0);
+            ks.update(a,b);
             break;
+            case 1:
+                ks = listaExpertos.get(1);
+                ks.update(a,b);
+            break;
+            case 2:
+                ks = listaExpertos.get(2);
+                ks.update(a,b);
+            break;
+            case 3:
+                ks = listaExpertos.get(3);
+                ks.update(a,b);
+            break;
+            case 4:
+                ks = listaExpertos.get(4);
+                ks.update(a,b);
+            break;
+            
         }
     }
 
+
+
     @Override
-    public void update() 
+    public void update(Observable o, Object arg) 
     {
+        
+        System.out.println("OBSERVADOR ACTUALIZADO");
         
     }
     

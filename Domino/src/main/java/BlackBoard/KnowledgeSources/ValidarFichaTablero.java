@@ -43,7 +43,8 @@ public class ValidarFichaTablero implements KnowledgeSource<Token,Boolean>
 //                return true;                
             }
         }
-//        return resultado;          
+//        return resultado;      
+
     }
 
 
