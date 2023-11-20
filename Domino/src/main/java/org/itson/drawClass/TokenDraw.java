@@ -15,14 +15,16 @@ public class TokenDraw extends GameElement{
     
     @Override
     public void draw(){
+        //porfavor dibujate!
         
     };
     
-    private void sideADraw(){
-        
+    public void setSideADraw(int sideA){
+        this.sideA=sideA;
     }
-    private void sideBDraw(){
-        
+    public void setSideBDraw(int sideB){
+        this.sideB = sideB;
     }
+    
     
 }

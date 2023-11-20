@@ -10,5 +10,4 @@ package org.itson.drawClass;
  */
 public abstract class GameElement {
     public void draw(){};
-    
 }
