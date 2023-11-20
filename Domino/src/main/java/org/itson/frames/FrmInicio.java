@@ -8,6 +8,7 @@ import org.itson.Interfaces.ILobby;
 import org.itson.Presenter.presenterConfig;
 import org.itson.Presenter.presenterLobby;
 import org.itson.Presenter.presenterModAvatar;
+import org.itson.Presenter.presenterPartida;
 
 
 /**
@@ -18,6 +19,7 @@ public class FrmInicio extends javax.swing.JFrame {
     
     presenterModAvatar presenterAvatar = new presenterModAvatar();
     presenterConfig presenterConfig = new presenterConfig();
+    presenterPartida presenterPartida = new presenterPartida();
 
     /**
      * Creates new form FrmInicio
@@ -153,7 +155,8 @@ public class FrmInicio extends javax.swing.JFrame {
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
         
-
+        presenterPartida.setVisiblePartida();
+        this.dispose();
         /*presenterLobby.setVisibleLobby();
         this.dispose();*/
         

@@ -7,6 +7,7 @@ package org.itson.domino;
 import java.util.LinkedList;
 import java.util.List;
 import org.itson.Domain.Player;
+import org.itson.Presenter.presenterInicio;
 
 /**
  *
@@ -29,6 +30,8 @@ public class Domino {
         System.out.println(j3.getId());
         
         System.out.println(j1.equals(j3));
+        presenterInicio presenter = new presenterInicio();
+        presenter.setVisibleInicio();
 
     }
 }

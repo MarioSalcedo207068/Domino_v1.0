@@ -11,6 +11,7 @@ import org.itson.frames.FrmInicio;
  * @author gerar
  */
 public class presenterInicio {
+    
     public static void setVisibleInicio()
     {
         FrmInicio frm = new FrmInicio();

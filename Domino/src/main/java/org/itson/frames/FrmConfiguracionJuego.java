@@ -14,7 +14,7 @@ import org.itson.Presenter.presenterInicio;
 public class FrmConfiguracionJuego extends javax.swing.JFrame {
     
     presenterLobby presenterLobby = new presenterLobby();
-    presenterInicio preseInicio = new presenterInicio();
+    presenterInicio presenterInicio = new presenterInicio();
 
     /**
      * Creates new form FrmConfiguracionJuego
@@ -151,7 +151,7 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         
-        preseInicio.setVisibleInicio();
+        presenterInicio.setVisibleInicio();
         this.dispose();
         
     }//GEN-LAST:event_btnVolverActionPerformed
