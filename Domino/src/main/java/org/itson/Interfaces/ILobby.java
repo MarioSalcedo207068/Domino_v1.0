@@ -10,7 +10,5 @@ package org.itson.Interfaces;
  */
 public interface ILobby {
     public void startGame();
-    public void setVisibleModificarAvatar();
-    public void setVisibleConfiguracionJuego();
     
 }

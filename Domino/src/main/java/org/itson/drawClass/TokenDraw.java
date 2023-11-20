@@ -14,5 +14,15 @@ public class TokenDraw extends GameElement{
     private int orientation;
     
     @Override
-    public void draw(){};
+    public void draw(){
+        
+    };
+    
+    private void sideADraw(){
+        
+    }
+    private void sideBDraw(){
+        
+    }
+    
 }

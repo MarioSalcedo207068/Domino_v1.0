@@ -22,41 +22,12 @@ public class presenterLobby implements ILobby{
     @Override
     public void startGame() {
         
-    }
-    
-    public void setVisibleConfiguracionJuego()
-    {
-        
-        FrmConfiguracionJuego frm = new FrmConfiguracionJuego();
-        frm.setVisible(true);
-   
-    }
-    
-    public void setVisibleModificarAvatar()
-    {
-        FrmModificarAvatar frm = new FrmModificarAvatar();
-        frm.setVisible(true);
-    }
+    } 
     
     public void setVisibleLobby()
     {
         FrmLobby frm = new FrmLobby();
         frm.setVisible(true);
     }
-    
-    public void setVisibleInicio()
-    {
-        FrmInicio frm = new FrmInicio();
-        frm.setVisible(true);
-    }
-    
-    public void setVisiblePartida()
-    {
-        FrmPartida frm = new FrmPartida();
-        frm.setVisible(true);
-    }
-    
-    
-    
-    
+  
 }

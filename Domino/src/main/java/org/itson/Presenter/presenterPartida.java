@@ -9,6 +9,7 @@ import java.util.List;
 import org.itson.Domain.Game;
 import org.itson.Domain.Token;
 import org.itson.Interfaces.IPartida;
+import org.itson.frames.FrmPartida;
 
 /**
  *
@@ -23,6 +24,12 @@ public class presenterPartida implements IPartida{
     public void endCurrentTurn(){
     
     };
+    
+    public void setVisiblePartida()
+    {
+        FrmPartida frm = new FrmPartida();
+        frm.setVisible(true);
+    }
 
     @Override
     public void placeTokenToBoard(Token token) {

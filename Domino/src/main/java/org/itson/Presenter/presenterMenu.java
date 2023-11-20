@@ -35,4 +35,6 @@ public class presenterMenu {
     {
         playerView.DisplayPlayerName(model.obtainPlayerAvatar());
     }
+    
+    
 }

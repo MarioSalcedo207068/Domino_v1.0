@@ -4,7 +4,7 @@
  */
 package org.itson.frames;
 
-import org.itson.Presenter.presenterLobby;
+import org.itson.Presenter.presenterPartida;
 
 /**
  *
@@ -12,9 +12,8 @@ import org.itson.Presenter.presenterLobby;
  */
 public class FrmLobby extends javax.swing.JFrame {
 
-    
-    
-    presenterLobby presenterLobby = new presenterLobby();
+    presenterPartida presenterPartida = new presenterPartida();
+
     /**
      * Creates new form FrmLobby
      */
@@ -157,8 +156,7 @@ public class FrmLobby extends javax.swing.JFrame {
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
 
-        
-        presenterLobby.setVisiblePartida();
+        presenterPartida.setVisiblePartida();
         this.dispose();
     }//GEN-LAST:event_btnStartActionPerformed
 

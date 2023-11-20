@@ -6,14 +6,14 @@ package org.itson.frames;
 
 import java.awt.Dialog;
 import javax.swing.JOptionPane;
-import org.itson.Presenter.presenterLobby;
+import org.itson.Presenter.presenterInicio;
 
 /**
  *
  * @author Equipo 02
  */
 public class FrmPartida extends javax.swing.JFrame {
-presenterLobby presenterLobby = new presenterLobby();
+presenterInicio presenterInicio = new presenterInicio();
     /**
      * Creates new form frmPartida
      */
@@ -256,7 +256,7 @@ presenterLobby presenterLobby = new presenterLobby();
         int respuesta=JOptionPane.showConfirmDialog(rootPane, "¿Seguro que desea abandonar la partida?");
         if (respuesta==0) {
 
-            presenterLobby.setVisibleInicio();
+            presenterInicio.setVisibleInicio();
             this.dispose();
         }else{
             
