@@ -9,6 +9,9 @@ import java.util.List;
 import org.itson.Domain.Game;
 import org.itson.Domain.Token;
 import org.itson.Interfaces.IPartida;
+import org.itson.drawClass.BoardDraw;
+import org.itson.drawClass.GameElement;
+import org.itson.drawClass.TokenDraw;
 import org.itson.frames.FrmPartida;
 
 /**
@@ -16,13 +19,14 @@ import org.itson.frames.FrmPartida;
  * @author Equipo 02
  */
 public class presenterPartida implements IPartida{
-    
+    BoardDraw boardGraph = new BoardDraw();
+    TokenDraw tokenGraph = new TokenDraw();
     public void endMatch(List<Dictionary> scoreList){
     
     };
     
     public void endCurrentTurn(){
-    
+        
     };
     
     public void setVisiblePartida()
@@ -33,7 +37,9 @@ public class presenterPartida implements IPartida{
 
     @Override
     public void placeTokenToBoard(Token token) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        tokenGraph.setSideADraw(token.getUpperSide());
+        tokenGraph.setSideBDraw(token.getLowerSide());
+        boardGraph.addTokens(tokenGraph);
     }
 
     @Override

@@ -11,13 +11,24 @@ import java.util.List;
  *
  * @author Equipo 02
  */
-public class BoardDraw extends GameElement{
+public class BoardDraw extends GameElement {
+
     //Atributos
-    private List TokenList=new LinkedList<TokenDraw>();
-    
+    private List TokenList = new LinkedList<TokenDraw>();
+
     //Métodos
-    public void addTokens(TokenDraw td){};
-    public void deleteTokens(TokenDraw td){};
+    public void addTokens(TokenDraw td) {
+        TokenList.add(td);
+    }
+
+    ;
+    public void deleteTokens(TokenDraw td) {
+        TokenList.remove(td);
+    }
+
+    ;
     @Override
-    public void draw(){};
+    public void draw() {
+    }
+;
 }
