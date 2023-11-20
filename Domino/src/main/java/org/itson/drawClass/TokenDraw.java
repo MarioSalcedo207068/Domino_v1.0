@@ -4,15 +4,20 @@
  */
 package org.itson.drawClass;
 
-/**
- *
+import java.awt.Color;
+import java.awt.Graphics;
+
+/** 
+ * 
  * @author Equipo 02
- */
+ */ 
 public class TokenDraw extends GameElement{
     private int sideA;
     private int sideB;
     private int orientation;
     
+    
     @Override
     public void draw(){};
+
 }
