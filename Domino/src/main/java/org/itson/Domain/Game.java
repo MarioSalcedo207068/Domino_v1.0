@@ -25,18 +25,20 @@ public class Game extends Observable
     private Board board;
     private State subjectState;
     private List<Dictionary> scoreList;
-
+    private Estados estadoJuego;
+    
     //Métodos
     
     public Game() 
     {
         players = new LinkedList<>();
-        
+        estadoJuego.JUEGO_ACTIVO;
     }
 
     public Game(int numPlayers, int numTokens) {
         this.numPlayers = numPlayers;
         this.numTokens = numTokens;
+        estadoJuego.JUEGO_ACTIVO
     }
     
     public int getNumPlayers() {

@@ -33,9 +33,9 @@ public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerTok
 //                break;
 //            }
 //        }
+        
         game.setObservableChanged();
         game.notifyObservers();
-
     }
 
 
