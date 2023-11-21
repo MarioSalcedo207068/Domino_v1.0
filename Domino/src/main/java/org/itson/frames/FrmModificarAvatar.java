@@ -2,7 +2,6 @@
 package org.itson.frames;
 
 import org.itson.Interfaces.IMenu;
-import org.itson.Presenter.presenterInicio;
 import org.itson.Presenter.presenterLobby;
 
 /**
@@ -14,7 +13,6 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
     
     IMenu presenterMenu;
     presenterLobby presenterLobby = new presenterLobby();
-    presenterInicio presenterInicio = new presenterInicio();
 
     
     /**
@@ -173,7 +171,7 @@ public class FrmModificarAvatar extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         
-        presenterInicio.setVisibleInicio();
+        //.setVisibleInicio();
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 

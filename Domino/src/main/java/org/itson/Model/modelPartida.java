@@ -4,9 +4,9 @@
  */
 package org.itson.Model;
 
-import java.lang.Thread.State;
 import java.util.List;
 import org.itson.Domain.BoardToken;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.playerToken;
@@ -48,11 +48,7 @@ public class modelPartida implements iModelPartida{
         return game.getBoard().getPond().getNumOfTokens();
     }
 
-    @Override
-    public State obtainGameState() 
-    {
-        return game.getState();
-    }
+
 
     @Override
     public List<BoardToken> obtainBoardTokenList() 
@@ -74,5 +70,11 @@ public class modelPartida implements iModelPartida{
         p = game.obtainPlayerInfo(id);
         return p.getTokenList().size();
     }
+
+    @Override
+    public Estados obtainGameState() {
+        return game.getEstadoJuego();
+    }
+
     
 }

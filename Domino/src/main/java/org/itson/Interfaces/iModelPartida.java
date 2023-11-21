@@ -4,9 +4,9 @@
  */
 package org.itson.Interfaces;
 
-import java.lang.Thread.State;
 import java.util.List;
 import org.itson.Domain.BoardToken;
+import org.itson.Domain.Estados;
 import org.itson.Domain.playerToken;
 
 /**
@@ -17,7 +17,7 @@ public interface iModelPartida {
     public String obtainPlayerName(int id);
     public String obtainPlayerAvatar(int id);
     public int obtainPondNumberOfTokens();
-    public State obtainGameState();
+    public Estados obtainGameState();
     public List<BoardToken> obtainBoardTokenList();
     public List<playerToken> obtainPlayerTokenList(int id);
     public int obtainPlayerNumberOfTokens(int id);

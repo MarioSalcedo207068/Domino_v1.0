@@ -4,10 +4,7 @@
  */
 package org.itson.frames;
 
-import org.itson.Interfaces.ILobby;
-import org.itson.Presenter.presenterConfig;
-import org.itson.Presenter.presenterLobby;
-import org.itson.Presenter.presenterModAvatar;
+
 import org.itson.Presenter.presenterPartida;
 
 
@@ -17,8 +14,6 @@ import org.itson.Presenter.presenterPartida;
  */
 public class FrmInicio extends javax.swing.JFrame {
     
-    presenterModAvatar presenterAvatar = new presenterModAvatar();
-    presenterConfig presenterConfig = new presenterConfig();
     presenterPartida presenterPartida = new presenterPartida();
 
     /**
@@ -141,7 +136,7 @@ public class FrmInicio extends javax.swing.JFrame {
 
     private void btnSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingsActionPerformed
 
-        presenterConfig.setVisibleConfiguracionJuego();
+        //.setVisibleConfiguracionJuego();
         this.dispose();        
         
     }//GEN-LAST:event_btnSettingsActionPerformed
@@ -149,7 +144,7 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnAvatarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvatarActionPerformed
         // TODO add your handling code here:
 
-        presenterAvatar.setVisibleModificarAvatar();
+        //.setVisibleModificarAvatar();
         this.dispose();
     }//GEN-LAST:event_btnAvatarActionPerformed
 

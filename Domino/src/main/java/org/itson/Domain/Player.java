@@ -15,7 +15,6 @@ public class Player {
     private String avatar;
     private List<playerToken> tokenList;
     private boolean playerState;
-    private State observerState;
     
     //Métodos 
     //public Token removeToken(Token tokenList){return this.tokenList.remove(1);}

@@ -9,8 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-import org.itson.Observer.IObservable;
-import org.itson.Observer.IObserver;
+
 
 /**
  *
@@ -23,7 +22,6 @@ public class Game extends Observable
     private boolean gameState;
     private List<Player> players;
     private Board board;
-    private State subjectState;
     private List<Dictionary> scoreList;
     private Estados estadoJuego;
     
@@ -32,13 +30,14 @@ public class Game extends Observable
     public Game() 
     {
         players = new LinkedList<>();
-        estadoJuego.JUEGO_ACTIVO;
+        this.estadoJuego=estadoJuego.JUEGO_ACTIVO;
+        
     }
 
     public Game(int numPlayers, int numTokens) {
         this.numPlayers = numPlayers;
         this.numTokens = numTokens;
-        estadoJuego.JUEGO_ACTIVO
+        this.estadoJuego=estadoJuego.JUEGO_ACTIVO;
     }
     
     public int getNumPlayers() {
@@ -216,19 +215,14 @@ public class Game extends Observable
     {
         setChanged();
     }
-    
-    
-    public State getState() {
-        return subjectState;
+
+    public Estados getEstadoJuego() {
+        return estadoJuego;
     }
 
-    public void setState(State subjectState) {
-        this.subjectState = subjectState;
+    public void setEstadoJuego(Estados estadoJuego) {
+        this.estadoJuego = estadoJuego;
     }
-
-
-        
- 
     
     
     

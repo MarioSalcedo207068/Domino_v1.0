@@ -5,7 +5,6 @@
 package org.itson.frames;
 
 import org.itson.Presenter.presenterLobby;
-import org.itson.Presenter.presenterInicio;
 
 /**
  *
@@ -14,7 +13,6 @@ import org.itson.Presenter.presenterInicio;
 public class FrmConfiguracionJuego extends javax.swing.JFrame {
     
     presenterLobby presenterLobby = new presenterLobby();
-    presenterInicio presenterInicio = new presenterInicio();
 
     /**
      * Creates new form FrmConfiguracionJuego
@@ -151,7 +149,7 @@ public class FrmConfiguracionJuego extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         
-        presenterInicio.setVisibleInicio();
+        //.setVisibleInicio();
         this.dispose();
         
     }//GEN-LAST:event_btnVolverActionPerformed

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import org.itson.Domain.Game;
-import org.itson.Observer.IObserver;
+
 
 /**
  *
