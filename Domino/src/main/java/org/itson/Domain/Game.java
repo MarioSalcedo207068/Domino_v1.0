@@ -30,14 +30,18 @@ public class Game extends Observable
     public Game() 
     {
         players = new LinkedList<>();
+
         this.estadoJuego=estadoJuego.JUEGO_ACTIVO;
+
         
     }
 
     public Game(int numPlayers, int numTokens) {
         this.numPlayers = numPlayers;
         this.numTokens = numTokens;
+
         this.estadoJuego=estadoJuego.JUEGO_ACTIVO;
+
     }
     
     public int getNumPlayers() {
@@ -208,6 +212,11 @@ public class Game extends Observable
 
     public void setScoreList(List<Dictionary> scoreList) {
         this.scoreList = scoreList;
+    }
+    
+    public void establecerEstadoJuego()
+    {
+        estadoJuego = estadoJuego.JUEGO_ACTIVO;
     }
     
     

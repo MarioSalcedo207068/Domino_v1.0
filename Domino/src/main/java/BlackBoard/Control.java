@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 
 
@@ -77,12 +78,41 @@ public class Control implements Observer
 
 
 
+    
+    private void actualizacion(Game juego) 
+    {
+        Estados e = juego.getEstadoJuego();
+        
+        switch (e)
+        {
+            case EN_ESPERA:
+            break;
+            
+            case ASIGNAR_FICHA:
+            break;
+            
+            case FICHA_VALIDA:
+            break;
+            
+            case FICHA_INVALIDA:
+            break;
+            
+            case PUNTUACIONES_CALCULADO:
+            break;
+            
+            case FICHAS_DEVUELTAS_POZO:
+            break;
+            
+            case FICHAS_INSERTADAS_TABLERO:
+            break;
+             
+        }
+    }
+
     @Override
     public void update(Observable o, Object arg) 
     {
-        
-        System.out.println("OBSERVADOR ACTUALIZADO");
-        
+        actualizacion((Game) arg);
     }
     
 }
