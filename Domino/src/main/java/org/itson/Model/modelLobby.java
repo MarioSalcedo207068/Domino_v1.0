@@ -1,5 +1,7 @@
 package org.itson.Model;
 
+import java.util.List;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Interfaces.iModelLobby;
@@ -21,22 +23,38 @@ public class modelLobby implements iModelLobby{
     };
 
     @Override
-    public boolean obtainGameState() {
-        return false;
+    public Estados obtainGameState() {
+        return game.getEstadoJuego();
     }
 
     @Override
     public int obtainNumOfPlayers() {
-        return 0;
+        return game.getNumPlayers();
     }
 
     @Override
-    public String obtainGamePlayerName() {
-        return null;
+    public List<String> obtainGamePlayerName() 
+    {
+        List<String> listaNombres = null;
+        
+        for (Player jugador : game.getPlayers()) 
+        {
+            listaNombres.add(jugador.getName());
+        }
+        return listaNombres;
     }
 
     @Override
-    public String obtainGamePlayerAvatar() {
-        return null;
+    public List<String> obtainGamePlayerAvatar() 
+    {
+        List<String> listaAvatares = null;
+        
+        for (Player jugador : game.getPlayers()) 
+        {
+            listaAvatares.add(jugador.getAvatar());
+        }
+        return listaAvatares;
     }
+
+
 }

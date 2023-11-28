@@ -6,7 +6,7 @@ package org.itson.frames;
 
 
 import org.itson.Interfaces.IMenu;
-import org.itson.Presenter.presenterPartida;
+
 
 
 /**
@@ -15,13 +15,15 @@ import org.itson.Presenter.presenterPartida;
  */
 public class FrmInicio extends javax.swing.JFrame {
     
-    IMenu presenterMenu;
+    static IMenu presenterMenu;
     
     /**
      * Creates new form FrmInicio
+     * @param pm
      */
-    public FrmInicio() {
+    public FrmInicio(IMenu pm) {
         initComponents();
+        FrmInicio.presenterMenu = pm;
         showPanel(0);
         
     }
@@ -216,7 +218,7 @@ public class FrmInicio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVolver2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addGap(21, 21, 21))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,9 +233,9 @@ public class FrmInicio extends javax.swing.JFrame {
                     .addComponent(cantFichasJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(91, 91, 91)
                 .addComponent(btnVolver2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
 
         panels.addTab("Juego", jPanel2);
@@ -382,8 +384,9 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpezarActionPerformed
 
         
-        //INTERACCIÓN CON EL PRESENTER LOBBY
         this.dispose();
+        presenterMenu.connectWithPresenterLobby();
+        
 
     }//GEN-LAST:event_btnEmpezarActionPerformed
 
@@ -424,7 +427,7 @@ public class FrmInicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmInicio().setVisible(true);
+                new FrmInicio(presenterMenu).setVisible(true);
             }
         });
     }

@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package org.itson.Model;
 
-import java.io.Console;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Interfaces.iModelMenu;

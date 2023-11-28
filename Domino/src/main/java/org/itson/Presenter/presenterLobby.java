@@ -22,7 +22,9 @@ public class presenterLobby implements ILobby{
         
     } 
     
-    public void setVisibleLobby()
+
+    @Override
+    public void showLobby() 
     {
         FrmLobby frm = new FrmLobby();
         frm.setVisible(true);

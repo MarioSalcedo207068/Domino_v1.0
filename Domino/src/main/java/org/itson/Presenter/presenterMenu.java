@@ -7,6 +7,7 @@ import org.itson.Interfaces.IPlayerView;
 import org.itson.Interfaces.iModelMenu;
 import org.itson.Model.modelLobby;
 import org.itson.Model.modelMenu;
+import org.itson.frames.FrmInicio;
 
 /**
  *
@@ -14,8 +15,7 @@ import org.itson.Model.modelMenu;
  */
 
 /**
- * Implementación de iModelMenu PRUEBA para método obtainPlayerName
- * @author aleja
+ * @author Equipo 02
  */
 public class presenterMenu implements IMenu  {
 
@@ -24,11 +24,20 @@ public class presenterMenu implements IMenu  {
      * Instancia de modelMenu == model
      */
     private modelMenu model;
+    private presenterLobby presenterLobby;
+    private FrmInicio frmInicio;
     
-
+    public presenterMenu()
+    {
+        model = new modelMenu();
+        presenterLobby = new presenterLobby();
+        frmInicio = new FrmInicio(this);
+    }
+    
     @Override
-    public void returnToMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void returnToMenu() 
+    {
+        frmInicio.setVisible(true);
     }
 
     @Override
@@ -41,6 +50,14 @@ public class presenterMenu implements IMenu  {
     public void createNewGame(int numPlayers, int numTokensPerPlayers) 
     {
         model.createGame(numPlayers, numTokensPerPlayers);
+    }
+
+    @Override
+    public void connectWithPresenterLobby() 
+    {
+        
+        presenterLobby.showLobby();
+        
     }
     
     

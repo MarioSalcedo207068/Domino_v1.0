@@ -8,7 +8,8 @@ package org.itson.Interfaces;
  *
  * @author Equipo 02
  */
-public interface ILobby {
+public interface ILobby 
+{
     public void startGame();
-    
+    public void showLobby();
 }

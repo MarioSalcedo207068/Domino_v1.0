@@ -4,6 +4,9 @@
  */
 package org.itson.Interfaces;
 
+import java.util.List;
+import org.itson.Domain.Estados;
+
 
 
 /**
@@ -11,8 +14,8 @@ package org.itson.Interfaces;
  * @author Equipo 02
  */
 public interface iModelLobby {
-    public boolean obtainGameState();
+    public Estados obtainGameState();
     public int obtainNumOfPlayers();
-    public String obtainGamePlayerName();
-    public String obtainGamePlayerAvatar();
+    public List<String>  obtainGamePlayerName();
+    public List<String>  obtainGamePlayerAvatar();
 }
