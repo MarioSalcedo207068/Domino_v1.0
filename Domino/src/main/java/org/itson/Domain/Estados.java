@@ -20,7 +20,9 @@ public enum Estados
     JUEGO_ACTIVO, //Estado Neutral del juego
     FICHAS_DEVUELTAS_POZO, //DevolverFichasAlPozo
     FICHAS_INSERTADAS_TABLERO, //InsertarFichaJugadorAlTablero
-    
+    JUGADOR_SIN_FICHAS,//VerificarCantidadFichasJugador1
+    JUGADOR_CON_FICHAS,//VerificarCantidadFichasJugador2
+    JUGADOR_FICHA_POZO,//ObtenerFichaDelPozo
     ;
     
     

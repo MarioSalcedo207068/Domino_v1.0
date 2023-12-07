@@ -16,7 +16,6 @@ import org.itson.Domain.playerToken;
 public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerToken,Player> {
     
     private Game game;
-    private Board board;
     public InsertarFichaJugadorAlTablero(Game game)
     {
         this.game = game;
@@ -42,15 +41,15 @@ public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerTok
     @Override
     public void update(playerToken fichaJugador, Player jugador) 
     {
-//        for(Player players : game.getPlayers())
-//        {
-//            if(players.getId() == jugador.getId())
-//            {
-//                players.removeToken(fichaJugador);
-//                game.getBoard().addTokenToBoard(fichaJugador);
-//                break;
-//            }
-//        }
+        for(Player players : game.getPlayers())
+        {
+            if(players.getId() == jugador.getId())
+            {
+                players.removeToken(fichaJugador);
+                game.getBoard().addTokenToBoard(fichaJugador);
+                break;
+            }
+        }
         
         game.setObservableChanged();
         game.notifyObservers();

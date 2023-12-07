@@ -1,26 +1,28 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package BlackBoard.KnowledgeSources;
 
-import java.util.List;
 import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.Token;
+import org.itson.Domain.playerToken;
 
 /**
  *
- * @author Equipo 02
+ * @author PC
  */
-public class DevolverFichasAlPozo implements KnowledgeSource <Integer,Object>
+public class ObtenerFichaDelPozo implements KnowledgeSource <Integer,Object> 
 {
-    private Game game;
-    public DevolverFichasAlPozo(Game game)
+    Game game;
+    public ObtenerFichaDelPozo(Game game)
     {
         this.game = game;
     }
+
     
-
-
     @Override
     public void update(Integer idJugador, Object u) 
     {
@@ -34,16 +36,14 @@ public class DevolverFichasAlPozo implements KnowledgeSource <Integer,Object>
                 break;
             }
         }
+        Token tokenToGive = game.getBoard().getPond().pullToken();
         
-        game.getBoard().getPond().addTokensToPond(jugadorBuscado.getTokenList());
-        jugadorBuscado.setListToEmpty();
+        jugadorBuscado.getTokenList().add((playerToken) tokenToGive);
         
-        
-        game.setEstadoJuego(Estados.FICHAS_DEVUELTAS_POZO);
+        game.setEstadoJuego(Estados.JUGADOR_FICHA_POZO);
         game.setObservableChanged();
-        game.notifyObservers();
+        game.notifyObservers();             
+        
     }
-    
-    
     
 }

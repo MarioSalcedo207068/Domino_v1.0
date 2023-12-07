@@ -6,7 +6,9 @@ import BlackBoard.KnowledgeSources.CalcularScoreJugadores;
 import BlackBoard.KnowledgeSources.DevolverFichasAlPozo;
 import BlackBoard.KnowledgeSources.InsertarFichaJugadorAlTablero;
 import BlackBoard.KnowledgeSources.KnowledgeSource;
+import BlackBoard.KnowledgeSources.ObtenerFichaDelPozo;
 import BlackBoard.KnowledgeSources.ValidarFichaTablero;
+import BlackBoard.KnowledgeSources.VerificarCantidadFichasJugador;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Observable;
@@ -33,12 +35,17 @@ public class Control implements Observer
         DevolverFichasAlPozo e3 = new DevolverFichasAlPozo(game);
         InsertarFichaJugadorAlTablero e4 = new InsertarFichaJugadorAlTablero(game);
         ValidarFichaTablero e5 = new ValidarFichaTablero(game);
+        ObtenerFichaDelPozo e6 = new ObtenerFichaDelPozo(game);
+        VerificarCantidadFichasJugador e7 = new VerificarCantidadFichasJugador(game);
         
         listaExpertos.add(e1);
         listaExpertos.add(e2);
         listaExpertos.add(e3);
         listaExpertos.add(e4);
         listaExpertos.add(e5);
+        listaExpertos.add(e6);
+        listaExpertos.add(e7);
+        
         
     }
 
@@ -73,14 +80,33 @@ public class Control implements Observer
                 ks.update(a,b);
             break;
             
+            case 5:
+                ks = listaExpertos.get(5);
+                ks.update(a,b);
+            break;
+            
+            case 6:
+                ks = listaExpertos.get(6);
+                ks.update(a,b);
+            break;
+            
         }
     }
-
+    
+    public void setGame(Game game)
+    {
+        this.blackboard = game;
+    }
+    
+    public Game getGame() {
+        return blackboard;
+    }
 
 
     
     private void actualizacion(Game juego) 
     {
+        setGame(juego);
         Estados e = juego.getEstadoJuego();
         
         switch (e)

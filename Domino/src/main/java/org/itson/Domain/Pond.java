@@ -41,5 +41,9 @@ public class Pond
         int n =(int)(Math.random() * (max - min)) + min;
         
         return n;
+    }
+    public boolean emptyPondTokenList()
+    {
+        return tokenList.isEmpty();
     }    
 }

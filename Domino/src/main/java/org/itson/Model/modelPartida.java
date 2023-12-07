@@ -4,9 +4,18 @@
  */
 package org.itson.Model;
 
+import BlackBoard.Control;
+import java.util.Dictionary;
 import java.util.List;
 import org.itson.Domain.BoardToken;
 import org.itson.Domain.Estados;
+import static org.itson.Domain.Estados.ASIGNAR_FICHA;
+import static org.itson.Domain.Estados.EN_ESPERA;
+import static org.itson.Domain.Estados.FICHAS_DEVUELTAS_POZO;
+import static org.itson.Domain.Estados.FICHAS_INSERTADAS_TABLERO;
+import static org.itson.Domain.Estados.FICHA_INVALIDA;
+import static org.itson.Domain.Estados.FICHA_VALIDA;
+import static org.itson.Domain.Estados.PUNTUACIONES_CALCULADO;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.Token;
@@ -20,12 +29,19 @@ import org.itson.Interfaces.iModelPartida;
  */
 public class modelPartida implements iModelPartida{
     private Game game;
+    Control control;
     
-    
-    public void obtainTokenFromPond()
+    public modelPartida(Game game)
+    {
+        this.game = game;
+        control = new Control(this.game);
+    }
+    public modelPartida()
     {
         
     }
+    
+
     public void endCurrentTurn()
     {
         game.setEstadoJuego(Estados.JUEGO_ACTIVO);
@@ -124,6 +140,76 @@ public class modelPartida implements iModelPartida{
     public Estados obtainGameState() {
         return game.getEstadoJuego();
     }
+    
+    public void setGame(Game game)
+    {
+        this.game = game;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+    
+    public void verifyGameState(Object a, Object b)
+    {
+        Estados e = game.getEstadoJuego();
+        
+        switch (e)
+        {
+            case EN_ESPERA:
+                
+            break;
+            
+            case ASIGNAR_FICHA:
+            break;
+            
+            case FICHA_VALIDA:
+            break;
+            
+            case FICHA_INVALIDA:
+            break;
+            
+            case PUNTUACIONES_CALCULADO:
+            break;
+            
+            case FICHAS_DEVUELTAS_POZO:
+            break;
+            
+            case FICHAS_INSERTADAS_TABLERO:
+            break;
+             
+        }
+    }
+    
+    public void validateTokenBoard(Token tokenToPlace, Player player, boolean side)
+    {
+        control.llamadoExpertos(tokenToPlace, side, 4);
+        setGame(control.getGame());
+        
+        
+    }
+    
+    public void verifyTokensFromPond(Player player)
+    {
+        
+        game.getBoard().getPond().emptyPondTokenList();
+        
+        
+        control.llamadoExpertos(player.getId(), null, 5);
+        setGame(control.getGame());        
+
+        
+    }
+    
+    
+
+    @Override
+    public List<Dictionary> obtainScores() 
+    {
+        return game.getScoreList();
+    }
+    
+    
 
     
 }

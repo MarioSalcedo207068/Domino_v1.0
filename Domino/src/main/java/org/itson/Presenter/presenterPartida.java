@@ -7,8 +7,10 @@ package org.itson.Presenter;
 import java.util.Dictionary;
 import java.util.List;
 import org.itson.Domain.Game;
+import org.itson.Domain.Player;
 import org.itson.Domain.Token;
 import org.itson.Interfaces.IPartida;
+import org.itson.Interfaces.iModelPartida;
 import org.itson.Model.modelPartida;
 import org.itson.drawClass.BoardDraw;
 import org.itson.drawClass.GameElement;
@@ -25,8 +27,8 @@ public class presenterPartida implements IPartida{
     FrmPartida frm = new FrmPartida();
     modelPartida model = new modelPartida();
     
-    public void endMatch(List<Dictionary> scoreList){
-    
+    public void endMatch(List<Dictionary> scoreList)
+    {
         
     };
     
@@ -40,10 +42,12 @@ public class presenterPartida implements IPartida{
     }
 
     @Override
-    public void placeTokenToBoard(Token token) {
-        tokenGraph.setSideADraw(token.getUpperSide());
-        tokenGraph.setSideBDraw(token.getLowerSide());
-        boardGraph.addTokens(tokenGraph);
+    public void placeTokenToBoard(Token token,Player player,boolean side) {
+//        tokenGraph.setSideADraw(token.getUpperSide());
+//        tokenGraph.setSideBDraw(token.getLowerSide());
+//        boardGraph.addTokens(tokenGraph);
+
+
     }
 
     @Override
@@ -67,8 +71,9 @@ public class presenterPartida implements IPartida{
     }
 
     @Override
-    public void obtainTokenFromPond() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void obtainTokenFromPond(Player player) 
+    {
+        
     }
 
     @Override
@@ -89,5 +94,26 @@ public class presenterPartida implements IPartida{
     @Override
     public void exitGame() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public void updateDataOnScreen(iModelPartida model)
+    {
+        
+    }
+    
+    public void errorTokenValidation()
+    {
+        
+    }
+    
+    public void errorPondToken()
+    {
+        
+    }
+
+    @Override
+    public void endTurn(Integer idPlayer) 
+    {
+        
     }
 }

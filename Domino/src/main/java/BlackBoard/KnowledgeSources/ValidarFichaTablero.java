@@ -5,6 +5,7 @@
 package BlackBoard.KnowledgeSources;
 
 import org.itson.Domain.BoardToken;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Token;
 import org.itson.Domain.playerToken;
@@ -32,7 +33,11 @@ public class ValidarFichaTablero implements KnowledgeSource<Token,Boolean>
             BoardToken tokenInicio = game.getBoard().getFirstToken(); 
             if(tokenInicio.getLowerSide().equals(tokenFromPlayer.getUpperSide()) || tokenInicio.getLowerSide() == tokenFromPlayer.getLowerSide())
             {
-                //                return true;
+                game.setEstadoJuego(Estados.FICHA_VALIDA);
+            }
+            else
+            {
+                game.setEstadoJuego(Estados.FICHA_INVALIDA);
             }
         }
         else
@@ -40,10 +45,15 @@ public class ValidarFichaTablero implements KnowledgeSource<Token,Boolean>
             BoardToken tokenFinal = game.getBoard().getLastToken();
             if(tokenFinal.getUpperSide().equals(tokenFromPlayer.getUpperSide()) || tokenFinal.getLowerSide().equals(tokenFromPlayer.getLowerSide()))
             {
-//                return true;                
+                game.setEstadoJuego(Estados.FICHA_VALIDA);
+            }
+            else
+            {
+                game.setEstadoJuego(Estados.FICHA_INVALIDA);
             }
         }
-//        return resultado;      
+        game.setObservableChanged();
+        game.notifyObservers();        
 
     }
 

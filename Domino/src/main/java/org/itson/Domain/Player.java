@@ -29,7 +29,9 @@ public class Player {
     }
     public Player()
     {
-        
+        this.playerState = false;
+        this.id = obtenerNumeroRandom(0,100);
+        tokenList = new LinkedList();        
     }
     
     public List<playerToken> removeToken(Token tokenToRemove){
@@ -125,6 +127,17 @@ public class Player {
          
          return tokenList.indexOf(highestMule);
          
+     }
+     
+     public boolean emptyTokenList()
+     {
+
+         return tokenList.isEmpty();
+     }
+     
+     public void setListToEmpty()
+     {
+         tokenList = null;
      }
     
 

@@ -6,6 +6,7 @@ package org.itson.frames;
 
 import java.awt.Dialog;
 import javax.swing.JOptionPane;
+import org.itson.Interfaces.iModelPartida;
  
 
 /**
@@ -21,6 +22,24 @@ public class FrmPartida extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void showScoreList(iModelPartida data)
+    {
+        
+    }
+    
+    public void updateView(iModelPartida data)
+    {
+        
+    }
+    
+    public void showError(int numError)
+    {
+        
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

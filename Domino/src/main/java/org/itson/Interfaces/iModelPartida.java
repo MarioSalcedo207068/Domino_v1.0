@@ -4,6 +4,7 @@
  */
 package org.itson.Interfaces;
 
+import java.util.Dictionary;
 import java.util.List;
 import org.itson.Domain.BoardToken;
 import org.itson.Domain.Estados;
@@ -21,4 +22,5 @@ public interface iModelPartida {
     public List<BoardToken> obtainBoardTokenList();
     public List<playerToken> obtainPlayerTokenList(int id);
     public int obtainPlayerNumberOfTokens(int id);
+    public List<Dictionary> obtainScores();
 }

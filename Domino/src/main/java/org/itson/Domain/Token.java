@@ -19,9 +19,8 @@ public class Token
     public String dir;
     public int rotation;
     public int visible;
-/**
- * 
- */
+
+    
     /**
      * Este se cambió por practicidad para indicar el upperSide de la ficha.
      */

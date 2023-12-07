@@ -15,7 +15,7 @@ import java.util.Observer;
  *
  * @author Equipo 02
  */
-public class Game extends Observable 
+public final class Game extends Observable 
 {
     private int numPlayers;
     private int numTokens;
@@ -24,7 +24,7 @@ public class Game extends Observable
     private Board board;
     private List<Dictionary> scoreList;
     private Estados estadoJuego;
-    
+    private List<Token> allTokens;
     //Métodos
     
     public Game() 
@@ -32,7 +32,8 @@ public class Game extends Observable
         players = new LinkedList<>();
 
         this.estadoJuego=estadoJuego.JUEGO_ACTIVO;
-
+        allTokens = new LinkedList<>();
+        setListOfTokens();
         
     }
 
@@ -233,9 +234,186 @@ public class Game extends Observable
         this.estadoJuego = estadoJuego;
     }
     
+    public void setListOfTokens()
+    {
+        Token tokenToAdd = null;
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(0);
+        // 0 / 0
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(1);
+        // 0 / 1
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(2);
+        // 0 / 2
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(3);
+        // 0 / 3
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(4);
+        // 0 / 4
+        allTokens.add(tokenToAdd);       
+
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(5);
+        // 0 / 5
+        allTokens.add(tokenToAdd);  
+        
+        tokenToAdd.setLowerSide(0);
+        tokenToAdd.setUpperSide(6);
+        // 0 / 6
+        allTokens.add(tokenToAdd);        
+        
+        tokenToAdd.setLowerSide(2);
+        tokenToAdd.setUpperSide(6);
+        // 2 / 6
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(3);
+        tokenToAdd.setUpperSide(4);
+        // 3 / 4
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(3);
+        tokenToAdd.setUpperSide(5);
+        // 3 / 5
+        allTokens.add(tokenToAdd);        
+        
+        tokenToAdd.setLowerSide(3);
+        tokenToAdd.setUpperSide(6);
+        // 3 / 6
+        allTokens.add(tokenToAdd);  
+        
+        tokenToAdd.setLowerSide(4);
+        tokenToAdd.setUpperSide(5);
+        // 4 / 5
+        allTokens.add(tokenToAdd);        
+ 
+        tokenToAdd.setLowerSide(4);
+        tokenToAdd.setUpperSide(6);
+        // 4 / 6
+        allTokens.add(tokenToAdd);  
+        
+        tokenToAdd.setLowerSide(5);
+        tokenToAdd.setUpperSide(6);
+        // 5 / 6
+        allTokens.add(tokenToAdd);        
+
+        tokenToAdd.setLowerSide(2);
+        tokenToAdd.setUpperSide(5);
+        // 2 / 5
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(2);
+        tokenToAdd.setUpperSide(4);
+        // 2 / 4
+        allTokens.add(tokenToAdd);
+
+        tokenToAdd.setLowerSide(2);
+        tokenToAdd.setUpperSide(3);
+        // 2 / 3
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(1);
+        tokenToAdd.setUpperSide(6);
+        // 1 / 6
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(1);
+        tokenToAdd.setUpperSide(5);
+        // 1 / 5
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(1);
+        tokenToAdd.setUpperSide(4);
+        // 1 / 4
+        allTokens.add(tokenToAdd);        
+
+        tokenToAdd.setLowerSide(1);
+        tokenToAdd.setUpperSide(3);
+        // 1 / 3
+        allTokens.add(tokenToAdd);
+
+        tokenToAdd.setLowerSide(1);
+        tokenToAdd.setUpperSide(2);
+        // 1 / 2
+        allTokens.add(tokenToAdd);
+        
+        tokenToAdd.setLowerSide(6);
+        tokenToAdd.setUpperSide(6);
+        // 6 / 6
+        allTokens.add(tokenToAdd);  
+        
+        tokenToAdd.setLowerSide(5);
+        tokenToAdd.setUpperSide(5);
+        // 5 / 5
+        allTokens.add(tokenToAdd); 
+        
+        tokenToAdd.setLowerSide(4);
+        tokenToAdd.setUpperSide(4);
+        // 4 / 4
+        allTokens.add(tokenToAdd); 
+        
+        tokenToAdd.setLowerSide(3);
+        tokenToAdd.setUpperSide(3);
+        // 3 / 3
+        allTokens.add(tokenToAdd);   
+ 
+        tokenToAdd.setLowerSide(2);
+        tokenToAdd.setUpperSide(2);
+        // 2 / 2
+        allTokens.add(tokenToAdd); 
+
+        tokenToAdd.setLowerSide(1);
+        tokenToAdd.setUpperSide(1);
+        // 1 / 1
+        allTokens.add(tokenToAdd);        
+    }
+    
+    public void removeTokenFromList(int index)
+    {
+        allTokens.remove(index);
+    }
     
     
-    
+     public int obtenerNumeroRandom(int min, int max)
+    {
+        int n =(int)(Math.random() * (max - min)) + min;
+        
+        return n;
+    }    
+    public List<playerToken> giveTokens(int amountOfTokens)
+    {
+        List<playerToken> tokensToGive = null;
+        if(amountOfTokens>allTokens.size())
+        {
+            return null;
+        }
+        else
+        {
+        
+        
+        for(int i = 0;i<amountOfTokens;i++)
+          {
+            int randomNumber = obtenerNumeroRandom(0,allTokens.size());
+            playerToken tokenToGive = (playerToken) allTokens.get(randomNumber);
+            tokensToGive.add(tokenToGive);
+            removeTokenFromList(randomNumber);
+          }            
+        }
+        
+
+        
+        return tokensToGive;
+    }
     
 }
     

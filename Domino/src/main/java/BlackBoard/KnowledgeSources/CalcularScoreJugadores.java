@@ -4,6 +4,7 @@ package BlackBoard.KnowledgeSources;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.playerToken;
@@ -43,7 +44,10 @@ public class CalcularScoreJugadores implements KnowledgeSource
             puntuacion.put(jugador.getName(), sumaValorFicha);
             puntuaciones.add(puntuacion);
           }
-        game.setScoreList(puntuaciones);         
+        game.setScoreList(puntuaciones);
+        game.setEstadoJuego(Estados.PUNTUACIONES_CALCULADO);
+        game.setObservableChanged();
+        game.notifyObservers();           
     }
         
 }
