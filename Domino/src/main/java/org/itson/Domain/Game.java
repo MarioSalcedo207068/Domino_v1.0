@@ -19,7 +19,6 @@ public final class Game extends Observable
 {
     private int numPlayers;
     private int numTokens;
-    private boolean gameState;
     private List<Player> players;
     private Board board;
     private List<Dictionary> scoreList;
@@ -66,31 +65,6 @@ public final class Game extends Observable
      */
     public void endTurn(){};
     
-    
-//    /**
-//     * Revisar calculatePlayerScore
-//     * @return 
-//     */
-//    public List<Dictionary> calculatePlayerScore()
-//    {
-//        
-//        int sumaValorFicha = 0;
-//        List<Dictionary> puntuaciones = null;
-//        for(Player jugador:players)
-//        {
-//            Dictionary<String, Integer> puntuacion= new Hashtable<>();
-//            List<playerToken> listaFichas = jugador.getAllTokenList();
-//            for(playerToken ficha:listaFichas)
-//            {
-//                sumaValorFicha = ficha.getLowerSide() + ficha.getUpperSide();
-//            }
-//            puntuacion.put(jugador.getName(), sumaValorFicha);
-//            puntuaciones.add(puntuacion);
-//        }
-//        
-//        return puntuaciones;
-//    }
-//    
     /**
      * 
      * @return 
@@ -102,42 +76,9 @@ public final class Game extends Observable
         
     };
     
-//    /**
-//     * Cómo revolver las fichas
-//     * @param numTokens
-//     * @return 
-//     */
-//    public List obtainTokens(int numTokens)
-//    {
-//        List fichasExtraidas = null;
-//        for(int i = 0;numTokens>i;i++)
-//        {
-//            int numRandom = obtenerNumeroRandom(0,TokenList.size());
-//            fichasExtraidas.add(TokenList.get(numRandom));
-//            TokenList.remove(numRandom);
-//        }
-//        return fichasExtraidas;
-//    }
+
     
-//    /**
-//     * Asignar a jugador correspondiente
-//     * @param TokenList 
-//     * @param id 
-//     */
-    
-    public void assignTokensToPlayer(List TokenList, int id)
-    {
-        int posicionJugador = -1;
-        for(int i = 0;players.size()>i;i++)
-        {
-            if(players.get(i).getId() == id)
-            {
-                posicionJugador = i;
-            }
-        }
-        players.get(posicionJugador).setTokenList(TokenList);
-    };
-    
+
 
     public List<playerToken> obtainTokenListFromPlayer(int id)
     {
@@ -153,11 +94,6 @@ public final class Game extends Observable
         return players.get(posicionJugador).getTokenList();
     }
     
-//    public List addTokenToBoard(/*Token BoardTokenList*/ playerToken selectedToken)
-//    {
-//        board.addTokenToBoard(selectedToken);
-//        return board.getPlacedTokenList();
-//    }
     
     public Player obtainPlayerInfo(int id)
     {

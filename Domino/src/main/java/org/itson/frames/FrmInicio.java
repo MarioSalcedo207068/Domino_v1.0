@@ -24,6 +24,10 @@ public class FrmInicio extends javax.swing.JFrame {
         showInitialPanel();
         
     }
+    public void notifyError(int numOfError)
+    {
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -381,9 +385,9 @@ public class FrmInicio extends javax.swing.JFrame {
 
     private void btnEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpezarActionPerformed
 
+        presenterMenu.verifyGameData(1, 2);
         
-        this.dispose();
-        presenterMenu.connectWithPresenterLobby();
+        
         
 
     }//GEN-LAST:event_btnEmpezarActionPerformed

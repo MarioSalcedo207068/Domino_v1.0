@@ -12,5 +12,5 @@ public interface ILobby
 {
     public void setVisiblePartida();
     public void startGame();
-    public void showLobby();
+        public void showLobby();
 }

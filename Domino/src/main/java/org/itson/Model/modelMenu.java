@@ -36,4 +36,10 @@ public class modelMenu implements iModelMenu{
     public String obtainPlayerAvatar() {
         return player.getAvatar();
     }
+
+    public Game getGame() {
+        return game;
+    }
+    
+    
 }

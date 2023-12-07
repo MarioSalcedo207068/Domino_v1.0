@@ -49,13 +49,21 @@ public class presenterMenu implements IMenu  {
     {
         model.createGame(numPlayers, numTokensPerPlayers);
     }
-
-    @Override
+    
     public void connectWithPresenterLobby() 
     {
         
+        presenterLobby.setGameData(this.model.getGame());
         presenterLobby.showLobby();
         
+    }
+
+
+    @Override
+    public void verifyGameData(int numOfTokens, int numOfPlayers) 
+    {
+        
+        connectWithPresenterLobby();
     }
     
     

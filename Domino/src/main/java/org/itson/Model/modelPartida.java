@@ -47,49 +47,50 @@ public class modelPartida implements iModelPartida{
         game.setEstadoJuego(Estados.JUEGO_ACTIVO);
     }
     
-//    public List getHighestMule()
-//    {
-//
-//        
-//        Token token = null;
-//        token.setLowerSide(0);
-//        token.setUpperSide(0);
-//        int playerPosition = -1;
-//        
-//        for(int i = 0;i<game.getPlayers().size();i++)
-//        {
-//            if(game.getPlayers().get(i).highestMule() > 0)
-//            {
-//                int positionOfHighestMule = game.getPlayers().get(i).highestMule();
-//                if(game.getPlayers().get(i).getTokenList().get(positionOfHighestMule).getSumaFicha() > token.getSumaFicha())
-//                {
-//                    playerPosition = i;
-//                    token = game.getPlayers().get(i).getTokenList().get(positionOfHighestMule);
-//                }
-//            }
-//        }
-//        
-//        game.getBoard().addTokenToBoard(token);
-//        game.getPlayers().get(playerPosition).removeToken(token);
-//        
-//        
-//    }
-//    
-//    
-//    public List returnTokensToPond(Player player)
-//    {
-//        Player playerToRemove = null;
-//        for(int i = 0; i>game.getPlayers().size();i++)
-//        {
-//            if(game.getPlayers().get(i).getId() == player.getId())
-//            {
-//                playerToRemove = game.getPlayers().get(i);
-//                break;
-//            }
-//        }
-//        
-//        game.getBoard().getPond().addTokensToPond(playerToRemove.getTokenList());
-//    }
+    public void getHighestMule()
+    {
+
+        
+        Token token = null;
+        token.setLowerSide(0);
+        token.setUpperSide(0);
+        int playerPosition = -1;
+        
+        for(int i = 0;i<game.getPlayers().size();i++)
+        {
+            if(game.getPlayers().get(i).highestMule() > 0)
+            {
+                int positionOfHighestMule = game.getPlayers().get(i).highestMule();
+                if(game.getPlayers().get(i).getTokenList().get(positionOfHighestMule).getSumaFicha() > token.getSumaFicha())
+                {
+                    playerPosition = i;
+                    token = game.getPlayers().get(i).getTokenList().get(positionOfHighestMule);
+                }
+            }
+        }
+        
+        game.getBoard().addTokenToBoard(token);
+        game.getPlayers().get(playerPosition).removeToken(token);
+        
+        
+    }
+    
+    
+    public void returnTokensToPond(Player player)
+    {
+        Player playerToRemove = null;
+        for(int i = 0; i>game.getPlayers().size();i++)
+        {
+            if(game.getPlayers().get(i).getId() == player.getId())
+            {
+                playerToRemove = game.getPlayers().get(i);
+                break;
+            }
+        }
+        
+        game.getBoard().getPond().addTokensToPond(playerToRemove.getTokenList());
+        
+    }
 
     @Override
     public String obtainPlayerName(int id) 

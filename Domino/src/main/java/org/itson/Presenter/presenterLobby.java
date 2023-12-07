@@ -56,5 +56,10 @@ public class presenterLobby implements ILobby{
     {
         
     }
+    
+    public void setGameData(Game game)
+    {
+        
+    }     
   
 }

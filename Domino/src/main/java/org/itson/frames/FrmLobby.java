@@ -5,6 +5,7 @@
 package org.itson.frames;
 
 import org.itson.Interfaces.ILobby;
+import org.itson.Interfaces.iModelLobby;
 
 
 /**
@@ -22,6 +23,11 @@ public class FrmLobby extends javax.swing.JFrame {
     public FrmLobby(ILobby pl) {
         initComponents();
         FrmLobby.presenterLobby = pl;
+    }
+    
+    public void showData(iModelLobby model)
+    {
+        
     }
 
     /**

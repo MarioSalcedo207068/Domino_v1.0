@@ -18,11 +18,7 @@ public class Board extends BoardToken{
      * PRUEBAS EXTRAS 
      * 
      */
-    private Token primera;
-    private Token ultima;
-    private Token mula6;
-    private Token primeraArriba;
-    private Token ultimaAbajo;
+
     
     private LinkedList<BoardToken> placedToken = new LinkedList();
     private Pond pond;
@@ -48,36 +44,6 @@ public class Board extends BoardToken{
     public List<BoardToken> getTokenList() {
         return placedToken;
     }
-    
-    
-//    /**
-//     * Método para poner fichas, para validar antes de que se ponga en board
-//     * @param playerToken ficha de jugador a validar
-//     * @param bool Orientación de la ficha a colocar. De ser true, se comparará para la izquierda de la fila de fichas,
-//     * de ser false se comparará con la parte de la derecha.
-//     * @return 
-//     */
-//    public Boolean validateToken(playerToken playerToken, Boolean bool)
-//    {
-//        boolean resultado = false;
-//        
-//        //Si es True, la validación será direccionada al principio de la lista.
-//        if(bool == true)
-//        {
-//            BoardToken tokenInicio = placedToken.getFirst(); 
-//            if(tokenInicio.getLowerSide() == playerToken.getUpperSide() || tokenInicio.getLowerSide() == playerToken.getLowerSide())
-//            {return true;}
-//        }
-//        
-//        else
-//            //Si es False, la validación será direccionada al fin de la lista.
-//        {
-//            BoardToken tokenFinal = placedToken.getLast();
-//            if(tokenFinal.getUpperSide() == playerToken.getUpperSide() || tokenFinal.getLowerSide() == playerToken.getLowerSide())
-//            {return true;}
-//        } 
-//        return resultado;
-//    }
 
     public Pond getPond() {
         return pond;
@@ -98,8 +64,9 @@ public class Board extends BoardToken{
         return placedToken.getFirst();
     }
 
-    public boolean addTokenToBoard(Token token, Integer valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean addTokenToBoard(Token token, Integer valueOf) 
+    {
+        return true;
     }
     
     
