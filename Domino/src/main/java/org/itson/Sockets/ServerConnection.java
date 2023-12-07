@@ -26,30 +26,33 @@ import org.itson.frames.FrmLobby;
  */
 public class ServerConnection implements Runnable {
 
-    private final int PUERTO = 9192;
+    private final int PUERTO = 9000;
     private final String HOST = "localhost";
     private Socket socket;
-    private DataOutputStream salida;
+    private DataOutputStream output;
     private ObjectInputStream in;
-    private DataInputStream entrada;
-    private String mensaje;
-    private Game juego;
-    private Board tablero;
+    private DataInputStream dataIn;
+    private String message;
+    private Game game;
+    private Board board;
     private int id;
-    private Constantes con;
-    private boolean turno;
+    private Const con;
+    private boolean turn;
 
     public ServerConnection(Game juego) {
         try {
-            this.juego = juego;
-            this.tablero = new Board(PUERTO, PUERTO);
-            con = new Constantes();
+            this.game = juego;
+            this.board = new Board(PUERTO, PUERTO);
+            con = new Const();
             socket = new Socket(HOST, PUERTO);
-            entrada = new DataInputStream(socket.getInputStream());
-            salida = new DataOutputStream(socket.getOutputStream());
-            System.out.println("Conectado al servidor: " + socket.getInetAddress() + " En el puerto: " + socket.getPort());
+            dataIn = new DataInputStream(socket.getInputStream());
+            output = new DataOutputStream(socket.getOutputStream());
+            System.out.println("Connects to server: " 
+                    + socket.getInetAddress() 
+                    + " PORT: " 
+                    + socket.getPort());
         } catch (IOException e) {
-            System.out.println("Error al conectar con el servidor... " + e.getMessage());
+            System.out.println("Cannot connect to server! " + e.getMessage());
         }
     }
 
@@ -58,40 +61,38 @@ public class ServerConnection implements Runnable {
 
         while (true) {
             try {
-                mensaje = entrada.readUTF();
-                System.out.println(mensaje);
-                String split[] = mensaje.split(";");
+                message = dataIn.readUTF();
+                System.out.println(message);
+                String split[] = message.split(";");
                 if (split[0].equals("ID")) {
                     this.id = Integer.valueOf(split[1]);
                     System.out.println(id);
-                } else if (split[0].equals(con.ESPERA)) {
-                    System.out.println("Faltan jugadores");
-                } else if (split[0].equals(con.JUGAR)) {
-                    System.out.println("Comienza partida");
+                } else if (split[0].equals(con.WAIT)) {
+                    System.out.println("WAITING FOR PLAYERS");
+                } else if (split[0].equals(con.PLAY)) {
+                    System.out.println("START GAME");
                     this.enviaMensaje("3");
                 } else if (split[0].equals("4")) {
                     if (split[15].equals(String.valueOf(this.id))) {
-                        //setFichasJugador(message);
                     }
                 } else if (split[0].equals("5")) {
-                    if (tablero.addTokenToBoard(new Token(Integer.valueOf(split[2]), Integer.valueOf(split[3])), Integer.valueOf(split[4]))) {
-                        System.out.println("el id es: " + split[1]);
-                        System.out.println("Este id es: " + this.id);
+                    if (board.addTokenToBoard(new Token(Integer.valueOf(split[2]), Integer.valueOf(split[3])), Integer.valueOf(split[4]))) {
+                        System.out.println("ID: " + split[1]);
                         if (Integer.valueOf(split[1]) == this.id) {
-                            turno = true;
-                            System.out.println("tu turno");
+                            turn = true;
+                            System.out.println("Your Turn!!");
                         }
                     } else {
                         if (!(Integer.valueOf(split[1]) == this.id)) {
-                            System.out.println("No se puede poner la ficha");
-                            turno = true;
+                            System.out.println("Cannot place token");
+                            turn = true;
                         }
                     }
 
                 } else if (split[0].equals("6")) {
                     if (Integer.valueOf(split[1]) == this.id) {
-                        turno = true;
-                        System.out.println("tu turno");
+                        turn = true;
+                        System.out.println("Your Turn!!");
                     }
                 }
             } catch (IOException e) {
@@ -107,47 +108,47 @@ public class ServerConnection implements Runnable {
 
     public void enviaMensaje(String envia) {
         try {
-            salida.writeUTF(envia);
+            output.writeUTF(envia);
         } catch (IOException e) {
-            System.out.println("No se pudo enviar mensaje");
+            System.out.println("Message not sent!!");
         }
     }
 
     public void pasarTurno() {
-        turno = !turno;
-        mensaje = "6" + ";" + this.id;
-        enviaMensaje(mensaje);
+        turn = !turn;
+        message = "6" + ";" + this.id;
+        enviaMensaje(message);
     }
 
     public boolean enviaMovimiento(Token token, int lugar) {
-        if (turno) {
-            mensaje = "4" + ";" + this.id + ";" + String.valueOf(token.getUpperSide()) + ";" + String.valueOf(token.getLowerSide()) + ";" + lugar;
+        if (turn) {
+            message = "4" + ";" + this.id + ";" + String.valueOf(token.getUpperSide()) + ";" + String.valueOf(token.getLowerSide()) + ";" + lugar;
             try {
-                salida.writeUTF(mensaje);
+                output.writeUTF(message);
                 return true;
             } catch (IOException ex) {
                 Logger.getLogger(ServerConnection.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            System.out.println("No es tu turno");
+            System.out.println("Not your turn");
         }
         return false;
     }
 
-    public String mensaje() {
-        return mensaje;
+    public String message() {
+        return message;
     }
 
-    public Board getTablero() {
-        return tablero;
+    public Board getBoard() {
+        return board;
     }
 
     public boolean getTurno() {
-        return turno;
+        return turn;
     }
 
-    public void setTurno(boolean turno) {
-        this.turno = turno;
+    public void setTurn(boolean turn) {
+        this.turn = turn;
     }
 
 

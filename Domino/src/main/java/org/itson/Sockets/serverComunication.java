@@ -12,14 +12,14 @@ import java.util.Observable;
  *
  * @author aleja
  */
-public class serverComunicacion extends Observable{
+public class serverComunication extends Observable{
     
     private String message;
     private int players = 0;
     private int playersReady = 0;
     private ArrayList<String> lista = fichas();
     
-    public serverComunicacion(){
+    public serverComunication(){
        
     }
     

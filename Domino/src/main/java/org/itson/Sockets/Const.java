@@ -8,12 +8,12 @@ package org.itson.Sockets;
  *
  * @author aleja
  */
-public class Constantes {
-    public final String LISTO = "0";
-    public final String ESPERA = "1";
-    public final String JUGAR = "2";
+public class Const {
+    public final String READY = "0";
+    public final String WAIT = "1";
+    public final String PLAY=  "2";
     
-    public Constantes(){
+    public Const(){
         
     }
 }
