@@ -17,10 +17,11 @@ public class DevolverFichasAlPozo implements KnowledgeSource
         this.game = game;
     }    
     
-    public void update(List<Token> tokenList)
-    {
-        game.getBoard().getPond().addTokensToPond(tokenList); 
-    }
+    
+//    public void update(List<Token> tokenList)
+//    {
+//        game.getBoard().getPond().addTokensToPond(tokenList); 
+//    }
 
     //PENDIENTE
     @Override

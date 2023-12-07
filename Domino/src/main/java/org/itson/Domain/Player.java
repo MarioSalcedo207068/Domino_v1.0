@@ -65,7 +65,7 @@ public class Player {
         this.avatar = avatar;
     }
 
-    public List getTokenList() {
+    public List<playerToken> getTokenList() {
         return tokenList;
     }
 
@@ -94,9 +94,38 @@ public class Player {
         int n =(int)(Math.random() * (max - min)) + min;
         
         return n;
-    }       
-
-
+    }
+     
+     public int highestMule()
+     {
+         int countOfMules = 0;
+         
+         Token[] mules = null;
+         
+         for(int i = 0;i<tokenList.size();i++)
+         {
+             if(tokenList.get(i).isDouble() == true)
+             {
+                 mules[countOfMules] = tokenList.get(i);
+                 countOfMules++;
+             }
+         }
+         
+         Token highestMule = null;
+         highestMule.setLowerSide(0);
+         highestMule.setUpperSide(0);
+         
+         for(int i = 0;i<mules.length;i++)
+         {
+             if(mules[i].getSumaFicha()>highestMule.getSumaFicha())
+             {
+                 highestMule = mules[i];
+             }
+         }
+         
+         return tokenList.indexOf(highestMule);
+         
+     }
     
 
 }

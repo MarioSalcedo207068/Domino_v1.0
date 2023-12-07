@@ -10,6 +10,7 @@ package org.itson.Interfaces;
  */
 public interface ILobby 
 {
+    public void setVisiblePartida();
     public void startGame();
     public void showLobby();
 }

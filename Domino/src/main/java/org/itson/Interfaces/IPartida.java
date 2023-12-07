@@ -14,6 +14,7 @@ import org.itson.Domain.Token;
  * @author Equipo 02
  */
 public interface IPartida {
+
     public void placeTokenToBoard(Token token);
     public void setGameConfig(Game game);
     public void getTokenFromPond();

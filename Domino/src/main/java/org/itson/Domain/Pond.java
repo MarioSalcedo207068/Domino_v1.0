@@ -25,7 +25,7 @@ public class Pond
     }
     
     
-    public void addTokensToPond(List<Token> incomingTokens)
+    public void addTokensToPond(List<playerToken> incomingTokens)
     {
         tokenList.addAll(incomingTokens);
     }

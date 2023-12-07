@@ -4,7 +4,8 @@
  */
 package org.itson.frames;
 
-import org.itson.Presenter.presenterPartida;
+import org.itson.Interfaces.ILobby;
+
 
 /**
  *
@@ -12,13 +13,15 @@ import org.itson.Presenter.presenterPartida;
  */
 public class FrmLobby extends javax.swing.JFrame {
 
-    presenterPartida presenterPartida = new presenterPartida();
+    static ILobby presenterLobby;
 
     /**
      * Creates new form FrmLobby
+     * @param pl
      */
-    public FrmLobby() {
+    public FrmLobby(ILobby pl) {
         initComponents();
+        FrmLobby.presenterLobby = pl;
     }
 
     /**
@@ -46,7 +49,6 @@ public class FrmLobby extends javax.swing.JFrame {
         ScrlPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 153), 3, true), "Players", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 24), new java.awt.Color(0, 0, 153))); // NOI18N
 
         tblPlayers.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tblPlayers.setForeground(new java.awt.Color(0, 0, 0));
         tblPlayers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -71,7 +73,6 @@ public class FrmLobby extends javax.swing.JFrame {
         tblPlayers.setGridColor(new java.awt.Color(0, 153, 153));
         tblPlayers.setName(""); // NOI18N
         tblPlayers.setSelectionBackground(new java.awt.Color(204, 204, 204));
-        tblPlayers.setSelectionForeground(new java.awt.Color(0, 0, 0));
         tblPlayers.setShowGrid(true);
         ScrlPanel.setViewportView(tblPlayers);
 
@@ -156,45 +157,11 @@ public class FrmLobby extends javax.swing.JFrame {
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
 
-        presenterPartida.setVisiblePartida();
+        presenterLobby.setVisiblePartida();
         this.dispose();
     }//GEN-LAST:event_btnStartActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmLobby.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmLobby.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmLobby.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmLobby.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmLobby().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrlPanel;

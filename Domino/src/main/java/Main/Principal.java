@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package Main;
 
 import org.itson.Presenter.presenterMenu;
+import org.itson.drawClass.Canvas;
 import org.itson.frames.FrmInicio;
 
 /**
@@ -18,9 +16,11 @@ public class Principal {
      */
     public static void main(String[] args) 
     {
+        
         presenterMenu pm = new presenterMenu();
-        FrmInicio frame = new FrmInicio(pm);
-        frame.setVisible(true);
+        FrmInicio frm = new FrmInicio(pm);
+        frm.setVisible(true);
+        
     }
-    
+ 
 }

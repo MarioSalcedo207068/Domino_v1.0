@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package org.itson.frames;
 
 
@@ -24,7 +21,7 @@ public class FrmInicio extends javax.swing.JFrame {
     public FrmInicio(IMenu pm) {
         initComponents();
         FrmInicio.presenterMenu = pm;
-        showPanel(0);
+        showInitialPanel();
         
     }
 
@@ -347,13 +344,14 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
       
         
-        showPanel(2);
+        showPlayerCustomizationPanel();
         
         
     }//GEN-LAST:event_btnUsuarioActionPerformed
 
     private void btnConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracionActionPerformed
 
+        
         
         //SECCIÓN DE CONFIGURACIÓN DEL JUEGO COMO TAL
         
@@ -364,7 +362,7 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJuegoActionPerformed
 
         
-        showPanel(1);
+        showGameConfigurationPanel();
     }//GEN-LAST:event_btnJuegoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -377,7 +375,7 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnVolver3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver3ActionPerformed
         
         
-        showPanel(0);
+        showInitialPanel();
         
     }//GEN-LAST:event_btnVolver3ActionPerformed
 
@@ -392,55 +390,34 @@ public class FrmInicio extends javax.swing.JFrame {
 
     private void btnVolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver2ActionPerformed
         
-        showPanel(0);
+        showInitialPanel();
         
     }//GEN-LAST:event_btnVolver2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmInicio(presenterMenu).setVisible(true);
-            }
-        });
-    }
     
     private void createNewGame(int numPlayers, int numTokensPerPlayer)
     {
         presenterMenu.createNewGame(numPlayers, numTokensPerPlayer);
     }
     
-    private void showPanel(int numOfPanel)
+
+    
+    private void showInitialPanel()
     {
-        panels.setSelectedIndex(numOfPanel);
+        panels.setSelectedIndex(0);
     }
+    
+    private void showGameConfigurationPanel()
+    {
+        panels.setSelectedIndex(1);
+    }
+    
+    
+    private void showPlayerCustomizationPanel()
+    {
+        panels.setSelectedIndex(2);
+    }    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnterior;

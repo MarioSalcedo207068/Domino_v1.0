@@ -17,8 +17,6 @@ public class modelLobby implements iModelLobby{
     
     public Game startGame()
     {
-        
-        
         return this.game;
     };
 

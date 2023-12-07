@@ -12,13 +12,35 @@ import org.itson.frames.FrmPartida;
  * @author aleja
  */
 public class presenterLobby implements ILobby{
-    modelLobby ModelLobby;
+    modelLobby model;
+    FrmLobby frm;
+    presenterPartida pp; 
+    presenterMenu pm;
     
-    public void createNewGame(Game game){};
-    public void connectGamePresenter(){};
+    
+    public presenterLobby()
+    {
+        model = new modelLobby();
+        pp = new presenterPartida();
+        pm = new presenterMenu();
+        frm = new FrmLobby(this);
+        
+    }
+    
+    public void createNewGame(Game game)
+    {
+        
+    };
+    
+    public void connectGamePresenter()
+    {
+        pp.setVisiblePartida();
+        
+    };
 
     @Override
-    public void startGame() {
+    public void startGame() 
+    {
         
     } 
     
@@ -26,8 +48,13 @@ public class presenterLobby implements ILobby{
     @Override
     public void showLobby() 
     {
-        FrmLobby frm = new FrmLobby();
         frm.setVisible(true);
+    }
+
+    @Override
+    public void setVisiblePartida() 
+    {
+        
     }
   
 }

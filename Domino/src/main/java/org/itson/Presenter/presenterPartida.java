@@ -9,6 +9,7 @@ import java.util.List;
 import org.itson.Domain.Game;
 import org.itson.Domain.Token;
 import org.itson.Interfaces.IPartida;
+import org.itson.Model.modelPartida;
 import org.itson.drawClass.BoardDraw;
 import org.itson.drawClass.GameElement;
 import org.itson.drawClass.TokenDraw;
@@ -21,8 +22,12 @@ import org.itson.frames.FrmPartida;
 public class presenterPartida implements IPartida{
     BoardDraw boardGraph = new BoardDraw();
     TokenDraw tokenGraph = new TokenDraw();
+    FrmPartida frm = new FrmPartida();
+    modelPartida model = new modelPartida();
+    
     public void endMatch(List<Dictionary> scoreList){
     
+        
     };
     
     public void endCurrentTurn(){
@@ -31,7 +36,6 @@ public class presenterPartida implements IPartida{
     
     public void setVisiblePartida()
     {
-        FrmPartida frm = new FrmPartida();
         frm.setVisible(true);
     }
 

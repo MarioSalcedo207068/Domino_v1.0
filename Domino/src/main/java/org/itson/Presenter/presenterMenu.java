@@ -20,9 +20,7 @@ import org.itson.frames.FrmInicio;
 public class presenterMenu implements IMenu  {
 
     
-    /**
-     * Instancia de modelMenu == model
-     */
+
     private modelMenu model;
     private presenterLobby presenterLobby;
     private FrmInicio frmInicio;

@@ -138,7 +138,7 @@ public class Game extends Observable
     };
     
 
-    public List<Token> obtainTokenListFromPlayer(int id)
+    public List<playerToken> obtainTokenListFromPlayer(int id)
     {
         int posicionJugador = -1;
         for(int i = 0;players.size()>i;i++)
