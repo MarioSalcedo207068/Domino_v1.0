@@ -97,6 +97,10 @@ public class Board extends BoardToken{
     {
         return placedToken.getFirst();
     }
+
+    public boolean addTokenToBoard(Token token, Integer valueOf) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

@@ -1,6 +1,7 @@
 
 package org.itson.Domain;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,7 +15,13 @@ public class Token
      * EXTRAS pruebas
      */
     public int x,y;
-
+    public BufferedImage img;
+    public String dir;
+    public int rotation;
+    public int visible;
+/**
+ * 
+ */
     /**
      * Este se cambió por practicidad para indicar el upperSide de la ficha.
      */
