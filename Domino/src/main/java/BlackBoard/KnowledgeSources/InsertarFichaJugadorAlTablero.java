@@ -4,6 +4,7 @@
  */
 package BlackBoard.KnowledgeSources;
 
+import org.itson.Domain.Board;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.playerToken;
@@ -15,11 +16,28 @@ import org.itson.Domain.playerToken;
 public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerToken,Player> {
     
     private Game game;
+    private Board board;
     public InsertarFichaJugadorAlTablero(Game game)
     {
         this.game = game;
     }
-    
+    /*public boolean addPrimerFicha(playerToken token) {
+        //Verifica que sea la mula de 6
+        if (token.getUpperSide()== 6 && token.getLowerSide() == 6) {
+            token.x = canvas.getWidth() / 2;
+            token.y = canvas.getHeight() / 2;
+            board.primera = token;
+            board.ultima = token;
+            board.mula5 = token;
+            board.primeraArriba = board.mula5;
+            board.ultimaAbajo = board.mula5;
+            canvas.pintar(token);
+            return true;
+        } else {
+            System.out.println("La primera ficha debe ser la mula de 5");
+            return false;
+        }
+    }*/
     
     @Override
     public void update(playerToken fichaJugador, Player jugador) 

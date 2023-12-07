@@ -12,6 +12,18 @@ import java.util.List;
  * @author Equipo 02
  */
 public class Board extends BoardToken{
+    
+    
+    /**
+     * PRUEBAS EXTRAS 
+     * 
+     */
+    private Token primera;
+    private Token ultima;
+    private Token mula6;
+    private Token primeraArriba;
+    private Token ultimaAbajo;
+    
     private LinkedList<BoardToken> placedToken = new LinkedList();
     private Pond pond;
 

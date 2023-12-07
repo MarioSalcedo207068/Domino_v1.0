@@ -10,6 +10,10 @@ import java.util.Random;
  */
 public class Token 
 {
+    /**
+     * EXTRAS pruebas
+     */
+    public int x,y;
 
     /**
      * Este se cambió por practicidad para indicar el upperSide de la ficha.
