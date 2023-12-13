@@ -6,6 +6,7 @@ package org.itson.frames;
 
 import java.awt.Dialog;
 import javax.swing.JOptionPane;
+import org.itson.Interfaces.IPartida;
 import org.itson.Interfaces.iModelPartida;
  
 
@@ -15,6 +16,8 @@ import org.itson.Interfaces.iModelPartida;
  */
 public class FrmPartida extends javax.swing.JFrame {
 
+    
+    IPartida presenterPartida;
     /**
      * Creates new form frmPartida
      */

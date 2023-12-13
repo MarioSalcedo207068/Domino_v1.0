@@ -6,6 +6,7 @@ package org.itson.Interfaces;
 
 import java.util.Dictionary;
 import java.util.List;
+import java.util.Observer;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.Token;
@@ -14,7 +15,8 @@ import org.itson.Domain.Token;
  *
  * @author Equipo 02
  */
-public interface IPartida {
+public interface IPartida extends Observer 
+{
 
     public void placeTokenToBoard(Token tokenToPlace,Player player,boolean side);
     public void setGameConfig(Game game);

@@ -4,8 +4,10 @@
  */
 package org.itson.Presenter;
 
+import BlackBoard.Control;
 import java.util.Dictionary;
 import java.util.List;
+import java.util.Observable;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.Token;
@@ -21,12 +23,24 @@ import org.itson.frames.FrmPartida;
  *
  * @author Equipo 02
  */
-public class presenterPartida implements IPartida{
-    BoardDraw boardGraph = new BoardDraw();
-    TokenDraw tokenGraph = new TokenDraw();
-    FrmPartida frm = new FrmPartida();
-    modelPartida model = new modelPartida();
+public class presenterPartida implements IPartida {
+    BoardDraw boardGraph;
+    TokenDraw tokenGraph;
+    FrmPartida frm;
+    modelPartida model;
+    Control ctrl;
     
+    public presenterPartida()
+    {
+        boardGraph = new BoardDraw();
+        tokenGraph = new TokenDraw();
+        frm = new FrmPartida();
+        model = new modelPartida();
+        ctrl = new Control();
+        model.setControl(ctrl);
+    }
+    
+    @Override
     public void endMatch(List<Dictionary> scoreList)
     {
         
@@ -96,9 +110,10 @@ public class presenterPartida implements IPartida{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    public void updateDataOnScreen(iModelPartida model)
+    public void updateDataOnScreen(Game game)
     {
-        
+        this.model.setGame(game);
+        frm.updateView(this.model);
     }
     
     public void errorTokenValidation()
@@ -115,5 +130,57 @@ public class presenterPartida implements IPartida{
     public void endTurn(Integer idPlayer) 
     {
         
+    }
+
+    public BoardDraw getBoardGraph() {
+        return boardGraph;
+    }
+
+    public void setBoardGraph(BoardDraw boardGraph) {
+        this.boardGraph = boardGraph;
+    }
+
+    public TokenDraw getTokenGraph() {
+        return tokenGraph;
+    }
+
+    public void setTokenGraph(TokenDraw tokenGraph) {
+        this.tokenGraph = tokenGraph;
+    }
+
+    public FrmPartida getFrm() {
+        return frm;
+    }
+
+    public void setFrm(FrmPartida frm) {
+        this.frm = frm;
+    }
+
+    public modelPartida getModel() {
+        return model;
+    }
+
+    public void setModel(modelPartida model) {
+        this.model = model;
+        this.model.setControl(ctrl);
+        
+    }
+
+    public Control getCtrl() {
+        return ctrl;
+    }
+
+    public void setCtrl(Control ctrl) {
+        this.ctrl = ctrl;
+        this.ctrl.addObserver(this);
+    }
+    
+    
+    
+
+    @Override
+    public void update(Observable o, Object arg) 
+    {
+        updateDataOnScreen((Game) arg);
     }
 }

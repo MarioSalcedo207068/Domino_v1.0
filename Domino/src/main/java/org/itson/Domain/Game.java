@@ -24,6 +24,7 @@ public final class Game extends Observable
     private List<Dictionary> scoreList;
     private Estados estadoJuego;
     private List<Token> allTokens;
+    private String prueba;
     //Métodos
     
     public Game() 
@@ -32,9 +33,18 @@ public final class Game extends Observable
 
         this.estadoJuego=estadoJuego.JUEGO_ACTIVO;
         allTokens = new LinkedList<>();
-        setListOfTokens();
+//        setListOfTokens();
         
     }
+
+    public String getPrueba() {
+        return prueba;
+    }
+
+    public void setPrueba(String prueba) {
+        this.prueba = prueba;
+    }
+    
 
     public Game(int numPlayers, int numTokens) {
         this.numPlayers = numPlayers;
@@ -110,21 +120,6 @@ public final class Game extends Observable
         
     }
     
-//    public void returnTokensToPond(List<Token> tokenList)
-//    {
-//        board.getPond().addTokensToPond(tokenList);    
-//    }
-    
-    
-//    
-//    /**
-//     * Verificar si el jugador está activo en la partida.
-//     * @param player 
-//     */
-//    public void playerStateToInactive(Player player)
-//    {
-//        
-//    };
 
 
     public Board getBoard() {
@@ -349,6 +344,21 @@ public final class Game extends Observable
 
         
         return tokensToGive;
+    }
+    
+    public Player searchTokenInPlayer(playerToken tokenToFind)
+    {
+        Player playerSelected = null;
+        for(Player p:players)
+        {
+            if(p.getTokenList().contains(tokenToFind))
+            {
+                playerSelected = p;
+                break;
+            }
+        }
+        
+        return playerSelected;
     }
     
 }

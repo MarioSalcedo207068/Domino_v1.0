@@ -53,8 +53,10 @@ public class ValidarFichaTablero implements KnowledgeSource<Token,Boolean>
             }
         }
         game.setObservableChanged();
-        game.notifyObservers();        
-
+        game.notifyObservers(tokenFromPlayer);        
+        
+        
+        
     }
 
 

@@ -30,15 +30,22 @@ import org.itson.Interfaces.iModelPartida;
 public class modelPartida implements iModelPartida{
     private Game game;
     Control control;
+
+    public modelPartida(Game game,Control control)
+    {
+        this.game = game;
+        this.control = control;
+    }    
     
     public modelPartida(Game game)
     {
         this.game = game;
         control = new Control(this.game);
     }
+    
     public modelPartida()
     {
-        
+        control = new Control();
     }
     
 
@@ -145,6 +152,7 @@ public class modelPartida implements iModelPartida{
     public void setGame(Game game)
     {
         this.game = game;
+        control = new Control(this.game);
     }
 
     public Game getGame() {
@@ -201,6 +209,17 @@ public class modelPartida implements iModelPartida{
 
         
     }
+
+    public Control getControl() {
+        return control;
+    }
+
+    public void setControl(Control control) {
+        this.control = control;
+
+    }
+
+    
     
     
 

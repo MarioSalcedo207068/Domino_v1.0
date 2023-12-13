@@ -15,13 +15,16 @@ import java.util.Observable;
 import java.util.Observer;
 import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
+import org.itson.Domain.Player;
+import org.itson.Domain.Token;
+import org.itson.Domain.playerToken;
 
 
 /**
  *
  * @author Equipo 02
  */
-public class Control implements Observer
+public class Control extends java.util.Observable implements Observer
 {
     private Game blackboard;
     private List<KnowledgeSource> listaExpertos;
@@ -29,14 +32,15 @@ public class Control implements Observer
     public Control(Game game)
     {
         this.blackboard = game;
+        blackboard.addObserver(this);
         listaExpertos = new LinkedList<>();
-        AsignarFichasAJugador e1 = new AsignarFichasAJugador(game);
-        CalcularScoreJugadores e2 = new CalcularScoreJugadores(game);
-        DevolverFichasAlPozo e3 = new DevolverFichasAlPozo(game);
-        InsertarFichaJugadorAlTablero e4 = new InsertarFichaJugadorAlTablero(game);
-        ValidarFichaTablero e5 = new ValidarFichaTablero(game);
-        ObtenerFichaDelPozo e6 = new ObtenerFichaDelPozo(game);
-        VerificarCantidadFichasJugador e7 = new VerificarCantidadFichasJugador(game);
+        AsignarFichasAJugador e1 = new AsignarFichasAJugador(blackboard);
+        CalcularScoreJugadores e2 = new CalcularScoreJugadores(blackboard);
+        DevolverFichasAlPozo e3 = new DevolverFichasAlPozo(blackboard);
+        InsertarFichaJugadorAlTablero e4 = new InsertarFichaJugadorAlTablero(blackboard);
+        ValidarFichaTablero e5 = new ValidarFichaTablero(blackboard);
+        ObtenerFichaDelPozo e6 = new ObtenerFichaDelPozo(blackboard);
+        VerificarCantidadFichasJugador e7 = new VerificarCantidadFichasJugador(blackboard);
         
         listaExpertos.add(e1);
         listaExpertos.add(e2);
@@ -51,7 +55,22 @@ public class Control implements Observer
 
     public Control() 
     {
-        
+        listaExpertos = new LinkedList<>();
+        AsignarFichasAJugador e1 = new AsignarFichasAJugador(blackboard);
+        CalcularScoreJugadores e2 = new CalcularScoreJugadores(blackboard);
+        DevolverFichasAlPozo e3 = new DevolverFichasAlPozo(blackboard);
+        InsertarFichaJugadorAlTablero e4 = new InsertarFichaJugadorAlTablero(blackboard);
+        ValidarFichaTablero e5 = new ValidarFichaTablero(blackboard);
+        ObtenerFichaDelPozo e6 = new ObtenerFichaDelPozo(blackboard);
+        VerificarCantidadFichasJugador e7 = new VerificarCantidadFichasJugador(blackboard);
+ 
+        listaExpertos.add(e1);
+        listaExpertos.add(e2);
+        listaExpertos.add(e3);
+        listaExpertos.add(e4);
+        listaExpertos.add(e5);
+        listaExpertos.add(e6);
+        listaExpertos.add(e7);
     }
     
     public void llamadoExpertos(Object a, Object b,int numExperto)
@@ -96,6 +115,7 @@ public class Control implements Observer
     public void setGame(Game game)
     {
         this.blackboard = game;
+        this.blackboard.addObserver(this);
     }
     
     public Game getGame() {
@@ -104,10 +124,9 @@ public class Control implements Observer
 
 
     
-    private void actualizacion(Game juego) 
+    public void actualizacion(Object a) 
     {
-        setGame(juego);
-        Estados e = juego.getEstadoJuego();
+        Estados e = blackboard.getEstadoJuego();
         
         switch (e)
         {
@@ -118,6 +137,10 @@ public class Control implements Observer
             break;
             
             case FICHA_VALIDA:
+            Token t = (Token) a;
+            Player p = blackboard.searchTokenInPlayer((playerToken) t);
+            llamadoExpertos(a,p,3);
+            
             break;
             
             case FICHA_INVALIDA:
@@ -130,7 +153,10 @@ public class Control implements Observer
             break;
             
             case FICHAS_INSERTADAS_TABLERO:
+            this.setChanged();
+            this.notifyObservers(blackboard);
             break;
+            
              
         }
     }
@@ -138,7 +164,23 @@ public class Control implements Observer
     @Override
     public void update(Observable o, Object arg) 
     {
-        actualizacion((Game) arg);
+    if (o != null && o instanceof Game) {
+        this.setGame((Game) o);
+        actualizacion(arg);
+        
+    } else
+    {System.out.println("NO ES UNA INSTANCIA DE JUEGO");}
+    
     }
+
+    public Game getBlackboard() {
+        return blackboard;
+    }
+
+    public void setBlackboard(Game blackboard) {
+        this.blackboard = blackboard;
+    }
+    
+    
     
 }
