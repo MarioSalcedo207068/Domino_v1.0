@@ -5,6 +5,7 @@
 package BlackBoard.KnowledgeSources;
 
 import org.itson.Domain.Board;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.playerToken;
@@ -41,18 +42,21 @@ public class InsertarFichaJugadorAlTablero implements KnowledgeSource <playerTok
     @Override
     public void update(playerToken fichaJugador, Player jugador) 
     {
+        int idJugador = 0;
         for(Player players : game.getPlayers())
         {
             if(players.getId() == jugador.getId())
             {
+                idJugador = players.getId();
                 players.removeToken(fichaJugador);
                 game.getBoard().addTokenToBoard(fichaJugador);
                 break;
             }
         }
+        game.setEstadoJuego(Estados.FICHAS_INSERTADAS_TABLERO);
         
         game.setObservableChanged();
-        game.notifyObservers();
+        game.notifyObservers(idJugador);
     }
 
 

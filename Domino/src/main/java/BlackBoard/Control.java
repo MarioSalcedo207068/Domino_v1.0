@@ -26,6 +26,7 @@ import org.itson.Domain.playerToken;
  */
 public class Control extends java.util.Observable implements Observer
 {
+    private EstadosControl estado;
     private Game blackboard;
     private List<KnowledgeSource> listaExpertos;
     
@@ -82,18 +83,22 @@ public class Control extends java.util.Observable implements Observer
             ks = listaExpertos.get(0);
             ks.update(a,b);
             break;
+            
             case 1:
                 ks = listaExpertos.get(1);
                 ks.update(a,b);
             break;
+            
             case 2:
                 ks = listaExpertos.get(2);
                 ks.update(a,b);
             break;
+            
             case 3:
                 ks = listaExpertos.get(3);
                 ks.update(a,b);
             break;
+            
             case 4:
                 ks = listaExpertos.get(4);
                 ks.update(a,b);
@@ -134,30 +139,57 @@ public class Control extends java.util.Observable implements Observer
             break;
             
             case ASIGNAR_FICHA:
+            this.setEstado(EstadosControl.ctrl_ASIGNAR_FICHA);
+            this.setChanged();
+            this.notifyObservers(blackboard);
             break;
             
             case FICHA_VALIDA:
             Token t = (Token) a;
             Player p = blackboard.searchTokenInPlayer((playerToken) t);
-            llamadoExpertos(a,p,3);
-            
+            llamadoExpertos(a,p,3);//InsertarFichaJugadorAlTablero
             break;
             
             case FICHA_INVALIDA:
+            this.setEstado(EstadosControl.ctrl_FICHA_INVALIDA);
+            this.setChanged();
+            this.notifyObservers(blackboard);                
             break;
             
             case PUNTUACIONES_CALCULADO:
-            break;
-            
-            case FICHAS_DEVUELTAS_POZO:
-            break;
-            
-            case FICHAS_INSERTADAS_TABLERO:
+            this.setEstado(EstadosControl.ctrl_PUNTUACIONES_CALCULADO);
             this.setChanged();
             this.notifyObservers(blackboard);
             break;
             
-             
+            case FICHAS_DEVUELTAS_POZO:
+            this.setEstado(EstadosControl.ctrl_FICHAS_DEVUELTAS_POZO);
+            this.setChanged();
+            this.notifyObservers(blackboard);            
+            break;
+            
+            case FICHAS_INSERTADAS_TABLERO:
+            int id = (int) a;
+            llamadoExpertos(id,null,6); //VerificarCantidadFichasJugador
+            
+
+            break;
+            
+            case JUGADOR_CON_FICHAS:
+            this.setEstado(EstadosControl.ctrl_JUGADOR_CON_FICHAS);
+            this.setChanged();
+            this.notifyObservers(blackboard);
+            break;
+            
+            case JUGADOR_SIN_FICHAS:
+            llamadoExpertos(null,null,1);//CalcularScoreJugadores
+            break;
+            case JUGADOR_FICHA_POZO:
+            this.setEstado(EstadosControl.ctrl_JUGADOR_FICHA_POZO);
+            this.setChanged();
+            this.notifyObservers(blackboard);            
+            break;    
+            
         }
     }
 
@@ -180,6 +212,16 @@ public class Control extends java.util.Observable implements Observer
     public void setBlackboard(Game blackboard) {
         this.blackboard = blackboard;
     }
+
+    public EstadosControl getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadosControl estado) {
+        this.estado = estado;
+    }
+    
+    
     
     
     

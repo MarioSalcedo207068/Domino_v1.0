@@ -5,9 +5,11 @@
 package org.itson.Presenter;
 
 import BlackBoard.Control;
+import BlackBoard.EstadosControl;
 import java.util.Dictionary;
 import java.util.List;
 import java.util.Observable;
+import org.itson.Domain.Estados;
 import org.itson.Domain.Game;
 import org.itson.Domain.Player;
 import org.itson.Domain.Token;
@@ -181,6 +183,49 @@ public class presenterPartida implements IPartida {
     @Override
     public void update(Observable o, Object arg) 
     {
-        updateDataOnScreen((Game) arg);
+    if (o != null && o instanceof Control) 
+    {
+        this.setCtrl((Control) o);
+        actualizacion(arg);
+    } else
+    {System.out.println("NO ES UNA INSTANCIA DE CONTROL");}
+    
+    }
+
+    private void actualizacion(Object arg) 
+    {
+        EstadosControl e = ctrl.getEstado();
+        
+        switch (e)
+        {
+            case ctrl_JUGADOR_CON_FICHAS:
+            model.setGame((Game) arg);
+            frm.updateView(model);
+            break;
+            
+            
+            case ctrl_JUGADOR_FICHA_POZO:
+            model.setGame((Game) arg);
+            frm.updateView(model);
+            break;
+            
+            
+            case ctrl_PUNTUACIONES_CALCULADO:
+            model.setGame((Game) arg);
+            frm.showScoreList(model);
+            break;
+            
+            case ctrl_FICHA_INVALIDA:
+            model.setGame((Game) arg);
+            frm.showError(0);    
+            break; 
+            
+            
+            case ctrl_ASIGNAR_FICHA:
+            model.setGame((Game) arg);
+            frm.updateView(model);
+            break;    
+                
+        }
     }
 }

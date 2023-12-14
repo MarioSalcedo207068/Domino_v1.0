@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package org.itson.Model;
 
 import BlackBoard.Control;
@@ -190,26 +187,45 @@ public class modelPartida implements iModelPartida{
         }
     }
     
+    
+    //INICIO LLAMADO DE LOS EXPERTOS DE CONTROL
+    
+    public void assignTokensToPlayer(Integer cantidadFichas, Integer idJugador)
+    {
+        control.llamadoExpertos(cantidadFichas, idJugador, 0);
+        setGame(control.getGame());
+    }
+    
+    public void returnTokensFromPlayerToPond(Integer idJugador)
+    {
+        control.llamadoExpertos(idJugador, null, 0);
+        setGame(control.getGame());        
+    } 
+    
     public void validateTokenBoard(Token tokenToPlace, Player player, boolean side)
     {
         control.llamadoExpertos(tokenToPlace, side, 4);
         setGame(control.getGame());
-        
-        
     }
     
     public void verifyTokensFromPond(Player player)
     {
         
-        game.getBoard().getPond().emptyPondTokenList();
-        
-        
-        control.llamadoExpertos(player.getId(), null, 5);
-        setGame(control.getGame());        
-
+        if(game.getBoard().getPond().emptyPondTokenList())
+        {
+            //ERROR HACIA EL PRESENTER QUE REFLEJE QUE NO HAY FICHAS EN EL POZO
+        }
+        else
+        {
+            control.llamadoExpertos(player.getId(), null, 5);
+            setGame(control.getGame());            
+        }
         
     }
-
+    
+    
+    
+    //FIN LLAMADO DE LOS EXPERTOS DE CONTROL
     public Control getControl() {
         return control;
     }
